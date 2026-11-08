@@ -1,0 +1,8 @@
+contador mod 10: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2]
+contador mod 12: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1]
+divisor 50 MHz -> 1 Hz: DIV=50000000, cuenta hasta 24999999, 25 bits
+divisor 50 MHz -> 1 kHz: DIV=50000, cuenta hasta 24999, 15 bits
+entrada : 00101011111111010000000000
+salida  : 00000000000011111111110000
+detector 101: x = [1, 0, 1, 0, 1, 1, 0, 1]  z = [0, 0, 1, 0, 1, 0, 0, 1]
+Comprobaciones: OK

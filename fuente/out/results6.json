@@ -1,0 +1,199 @@
+{
+ "R": {
+  "d.nfun4": 65536,
+  "d.lfsr_ciclos": {
+   "3": 7,
+   "4": 15,
+   "5": 31,
+   "6": 63,
+   "7": 127
+  }
+ },
+ "CHK": [
+  {
+   "id": "d.demorgan",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.demorgan3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.absorcion",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.adyacencia",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.consenso",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.xor",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.a_mas_nb",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nand_not",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nand_and",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nand_or",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nor_universal",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.c2.3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.c2.4",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.c2.5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.c2.8",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.fa",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.fa2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.resta.4",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.resta.8",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.jk",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.t",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.excitacion_jk",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.excitacion_fn",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nfun.1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nfun.2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.nfun.3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.bits",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.johnson",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.anillo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.lfsr",
+   "ok": true,
+   "detail": "{3: 7, 4: 15, 5: 31, 6: 63, 7: 127}"
+  },
+  {
+   "id": "d.divN.3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.divN.5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.divN.6",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.divN.10",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.contsync",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.chips",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "d.mux",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

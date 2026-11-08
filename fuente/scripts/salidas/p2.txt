@@ -1,0 +1,21 @@
+--- sumador de 4 bits ---
+ 9 +  8 + 0 = s 0001 ( 1), cout 1
+15 +  1 + 0 = s 0000 ( 0), cout 1
+ 7 +  8 + 1 = s 0000 ( 0), cout 1
+15 + 15 + 1 = s 1111 (15), cout 1
+--- comparador ---
+a= 5 b= 9 -> gt,eq,lt = (0, 0, 1)
+a= 9 b= 9 -> gt,eq,lt = (0, 1, 0)
+a=12 b= 3 -> gt,eq,lt = (1, 0, 0)
+--- mux 4:1 (d=0110) ---
+sel=00 -> y=0
+sel=01 -> y=1
+sel=10 -> y=1
+sel=11 -> y=0
+--- display (activo a 0, abcdefg) ---
+ 0 -> 0000001
+ 1 -> 1001111
+ 7 -> 0001111
+ 9 -> 0000100
+12 -> 1111111
+Comprobaciones exhaustivas: OK

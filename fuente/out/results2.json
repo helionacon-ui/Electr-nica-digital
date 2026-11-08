@@ -1,0 +1,280 @@
+{
+ "R": {
+  "feb25.p1.rango": [
+   -16,
+   19
+  ],
+  "feb25.p1.prod_rango": [
+   -12,
+   16
+  ],
+  "tab.T1": "M_1\\overline{M_0} + Q_0\\overline{M_1}M_0",
+  "tab.J0": "\\overline{M_1}M_0",
+  "tab.K0": "\\overline{M_1}M_0 + Q_1M_1\\overline{M_0}",
+  "tab.C0": "Q_1Q_0M_1\\overline{M_0}",
+  "tab.T": "Q_1M_1\\overline{M_0} + Q_1Q_0\\overline{M_1}M_0",
+  "tab.ej1": [
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    2,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "tab.ej2": [
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "noria.J2": "Q_1\\overline{Q_0}A\\overline{P} + Q_1Q_0\\overline{A}\\overline{B}\\overline{P}",
+  "noria.K2": "\\overline{Q_0}P + \\overline{Q_0}A + Q_0\\overline{A}\\overline{B}\\overline{P}",
+  "noria.J1": "\\overline{Q_2}B\\overline{P} + \\overline{Q_2}Q_0\\overline{A}\\overline{P}",
+  "noria.K1": "P + A + Q_0\\overline{B}",
+  "noria.J0": "B\\overline{P} + A\\overline{P}",
+  "noria.K0": "\\overline{A}\\overline{B}\\overline{P} + \\overline{Q_2}P",
+  "noria.MA": "\\overline{Q_2}\\overline{Q_1}Q_0 + Q_1\\overline{Q_0}",
+  "noria.MB": "Q_1Q_0 + Q_2\\overline{Q_0}",
+  "noria.terminos": 14,
+  "recinto.tabla": {
+   "6": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "7": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "8": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "9": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "recinto.err_sin_signo": 0,
+  "cnt.J2": "\\overline{Q_1}X + Q_1\\overline{X}",
+  "cnt.K2": "\\overline{Q_1}X + Q_1\\overline{X}",
+  "cnt.J1": "1",
+  "cnt.K1": "1",
+  "cnt.J0": "\\overline{Q_2}\\overline{Q_1}X + Q_2Q_1\\overline{X}",
+  "cnt.K0": "\\overline{Q_2}\\overline{Q_1}X + Q_2Q_1\\overline{X}",
+  "cnt.up": [
+   0,
+   2,
+   4,
+   6,
+   1,
+   3,
+   5,
+   7
+  ],
+  "cnt.down": [
+   0,
+   7,
+   5,
+   3,
+   1,
+   6,
+   4,
+   2
+  ],
+  "feb23.p1.dif_rango": [
+   -15,
+   15
+  ],
+  "feb23.p1.dif_redondeo": 72,
+  "toldo.sop": "\\overline{S}V + L + S\\overline{F}",
+  "toldo.pos": "(S + L + V)(\\overline{S} + \\overline{F})",
+  "toldo.on": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10
+  ],
+  "toldo.dc": [
+   12,
+   13,
+   14,
+   15
+  ]
+ },
+ "CHK": [
+  {
+   "id": "feb25.p1.exhaustivo",
+   "ok": true,
+   "detail": "512 combinaciones"
+  },
+  {
+   "id": "feb25.p1.rango",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "feb25.p2.dec416",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "feb25.p3.puertas==tabla",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "feb25.p3.exhaustivo",
+   "ok": true,
+   "detail": "todas las secuencias de hasta 7 entradas"
+  },
+  {
+   "id": "feb25.p3.ej",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.puertas==tabla",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.salidas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.escA",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.escAA",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.escAB",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.escBP",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "noria.escAAA",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "recinto.bloques",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "recinto.ejemplo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "recinto.sin_signo_ok",
+   "ok": true,
+   "detail": "h-3>=0 siempre porque h>=3"
+  },
+  {
+   "id": "cnt.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "cnt.down_enunciado",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "ventanas.para",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "ventanas.continua",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "ventanas.display",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "feb23.p1",
+   "ok": true,
+   "detail": "256 combinaciones"
+  },
+  {
+   "id": "toldo.sop",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "toldo.pos",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "toldo.manual_memoria",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

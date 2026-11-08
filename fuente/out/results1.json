@@ -1,0 +1,162 @@
+{
+ "R": {
+  "inv.sop": "T + V + H",
+  "inv.pos": "(T + V + H)",
+  "inv.minterms": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "media4.cascada_malas": 4900,
+  "media4.cascada_total": 39601,
+  "media4.cascada_pct": 12.4,
+  "media4.maxerr": 1,
+  "media4.ejemplo": [
+   1,
+   3
+  ],
+  "t.secuencia": [
+   0,
+   1,
+   6,
+   2,
+   7,
+   5,
+   3,
+   0
+  ],
+  "t.tabla": [
+   {
+    "q": "000",
+    "t": "001",
+    "n": "001"
+   },
+   {
+    "q": "001",
+    "t": "111",
+    "n": "110"
+   },
+   {
+    "q": "110",
+    "t": "100",
+    "n": "010"
+   },
+   {
+    "q": "010",
+    "t": "101",
+    "n": "111"
+   },
+   {
+    "q": "111",
+    "t": "010",
+    "n": "101"
+   },
+   {
+    "q": "101",
+    "t": "110",
+    "n": "011"
+   },
+   {
+    "q": "011",
+    "t": "011",
+    "n": "000"
+   }
+  ],
+  "caja.estados": {
+   "S0": "Reposo, esperando la primera A",
+   "S1": "A nº1 pulsada (se mantiene)",
+   "S2": "A nº1 soltada, espera A nº2",
+   "S3": "A nº2 pulsada (se mantiene)",
+   "S4": "A nº2 soltada, espera B",
+   "S5": "B pulsada (se mantiene)",
+   "S6": "B soltada, espera A nº3",
+   "S7": "A final pulsada (caja abierta, espera soltar)"
+  },
+  "caja.J2": "Q_1Q_0\\overline{a}\\overline{b}",
+  "caja.K2": "\\overline{Q_1}a + Q_1b + Q_1Q_0\\overline{a}",
+  "caja.J1": "Q_0\\overline{a}\\overline{b}",
+  "caja.K1": "b + Q_0\\overline{a}",
+  "caja.J0": "\\overline{Q_2}a + Q_1a + Q_2\\overline{Q_1}b",
+  "caja.K0": "\\overline{Q_2}\\overline{a} + Q_1\\overline{a} + Q_2\\overline{Q_1}\\overline{b}",
+  "caja.Z": "Q_2Q_1\\overline{Q_0}a",
+  "caja.n_tests": 9840,
+  "caja.literales": 35,
+  "caja.terminos": 14
+ },
+ "CHK": [
+  {
+   "id": "inv.sop",
+   "ok": true,
+   "detail": "H + V + T"
+  },
+  {
+   "id": "inv.pos",
+   "ok": true,
+   "detail": "(T + V + H)"
+  },
+  {
+   "id": "inv.nand",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "media4.bcd2bin",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "media4.cascada_difiere",
+   "ok": true,
+   "detail": "4900/39601"
+  },
+  {
+   "id": "media4.rango",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "media4.bits",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "t.secuencia",
+   "ok": true,
+   "detail": "[0, 1, 6, 2, 7, 5, 3]"
+  },
+  {
+   "id": "t.periodo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "caja.puertas==diagrama",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "caja.exhaustivo",
+   "ok": true,
+   "detail": "9840 secuencias de longitud<=8"
+  },
+  {
+   "id": "caja.abre",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "caja.no_abre_error",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "caja.sin_soltar",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

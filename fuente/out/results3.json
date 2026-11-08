@@ -1,0 +1,1095 @@
+{
+ "R": {
+  "k1.S": "S_1S_0 + S_2S_0 + S_2S_1",
+  "k1.S.on": [
+   3,
+   5,
+   6,
+   7
+  ],
+  "k1.S.dc": [],
+  "k2.C1": "A_1\\overline{B_1}",
+  "k2.C1.on": [
+   9,
+   13
+  ],
+  "k2.C1.dc": [
+   0,
+   4,
+   8,
+   12
+  ],
+  "k2.C0": "A_0\\overline{B_1} + A_1\\overline{B_0} + A_1A_0",
+  "k2.C0.on": [
+   5,
+   10,
+   13,
+   14,
+   15
+  ],
+  "k2.C0.dc": [
+   0,
+   4,
+   8,
+   12
+  ],
+  "k2.R1": "A_1\\overline{A_0}B_1B_0",
+  "k2.R1.on": [
+   11
+  ],
+  "k2.R1.dc": [
+   0,
+   4,
+   8,
+   12
+  ],
+  "k2.R0": "A_0\\overline{B_0} + \\overline{A_1}A_0B_1",
+  "k2.R0.on": [
+   6,
+   7,
+   14
+  ],
+  "k2.R0.dc": [
+   0,
+   4,
+   8,
+   12
+  ],
+  "k4.S3": "A_1A_0B_1B_0",
+  "k4.S3.on": [
+   15
+  ],
+  "k4.S3.dc": [],
+  "k4.S2": "A_1\\overline{A_0}B_1 + A_1B_1\\overline{B_0}",
+  "k4.S2.on": [
+   10,
+   11,
+   14
+  ],
+  "k4.S2.dc": [],
+  "k4.S1": "\\overline{A_1}A_0B_1 + A_0B_1\\overline{B_0} + A_1\\overline{A_0}B_0 + A_1\\overline{B_1}B_0",
+  "k4.S1.on": [
+   6,
+   7,
+   9,
+   11,
+   13,
+   14
+  ],
+  "k4.S1.dc": [],
+  "k4.S0": "A_0B_0",
+  "k4.S0.on": [
+   5,
+   7,
+   13,
+   15
+  ],
+  "k4.S0.dc": [],
+  "k5.TA": "S_3S_2S_1S_0",
+  "k5.TA.on": [
+   15
+  ],
+  "k5.TA.dc": [],
+  "k5.MA": "S_2S_1S_0 + S_3S_1S_0 + S_3S_2S_0 + S_3S_2S_1",
+  "k5.MA.on": [
+   7,
+   11,
+   13,
+   14,
+   15
+  ],
+  "k5.MA.dc": [],
+  "k5.I": "\\overline{S_3}\\overline{S_2}S_1S_0 + \\overline{S_3}S_2\\overline{S_1}S_0 + \\overline{S_3}S_2S_1\\overline{S_0} + S_3\\overline{S_2}\\overline{S_1}S_0 + S_3\\overline{S_2}S_1\\overline{S_0} + S_3S_2\\overline{S_1}\\overline{S_0}",
+  "k5.I.on": [
+   3,
+   5,
+   6,
+   9,
+   10,
+   12
+  ],
+  "k5.I.dc": [],
+  "k5.MR": "\\overline{S_3}\\overline{S_2}\\overline{S_1} + \\overline{S_3}\\overline{S_2}\\overline{S_0} + \\overline{S_3}\\overline{S_1}\\overline{S_0} + \\overline{S_2}\\overline{S_1}\\overline{S_0}",
+  "k5.MR.on": [
+   0,
+   1,
+   2,
+   4,
+   8
+  ],
+  "k5.MR.dc": [],
+  "k6.a": "N",
+  "k6.a.on": [
+   8,
+   9,
+   10
+  ],
+  "k6.a.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.b": "\\overline{S}E",
+  "k6.b.on": [
+   2,
+   10
+  ],
+  "k6.b.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.c": "\\overline{N}E",
+  "k6.c.on": [
+   2,
+   6
+  ],
+  "k6.c.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.d": "S",
+  "k6.d.on": [
+   4,
+   5,
+   6
+  ],
+  "k6.d.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.e": "\\overline{N}O",
+  "k6.e.on": [
+   1,
+   5
+  ],
+  "k6.e.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.f": "\\overline{S}O",
+  "k6.f.on": [
+   1,
+   9
+  ],
+  "k6.f.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k6.g": "0",
+  "k6.g.on": [],
+  "k6.g.dc": [
+   0,
+   3,
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.a": "\\overline{B}\\overline{D} + C + BD + A",
+  "k7.a.on": [
+   0,
+   2,
+   3,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "k7.a.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.b": "\\overline{B} + \\overline{C}\\overline{D} + CD",
+  "k7.b.on": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   7,
+   8,
+   9
+  ],
+  "k7.b.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.c": "\\overline{C} + D + B",
+  "k7.c.on": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "k7.c.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.d": "\\overline{B}\\overline{D} + \\overline{B}C + C\\overline{D} + B\\overline{C}D + A",
+  "k7.d.on": [
+   0,
+   2,
+   3,
+   5,
+   6,
+   8,
+   9
+  ],
+  "k7.d.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.e": "\\overline{B}\\overline{D} + C\\overline{D}",
+  "k7.e.on": [
+   0,
+   2,
+   6,
+   8
+  ],
+  "k7.e.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.f": "\\overline{C}\\overline{D} + B\\overline{C} + B\\overline{D} + A",
+  "k7.f.on": [
+   0,
+   4,
+   5,
+   6,
+   8,
+   9
+  ],
+  "k7.f.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k7.g": "\\overline{B}C + C\\overline{D} + B\\overline{C} + A",
+  "k7.g.on": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   8,
+   9
+  ],
+  "k7.g.dc": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k8.GT": "A_0\\overline{B_1}\\overline{B_0} + A_1\\overline{B_1} + A_1A_0\\overline{B_0}",
+  "k8.GT.on": [
+   4,
+   8,
+   9,
+   12,
+   13,
+   14
+  ],
+  "k8.GT.dc": [],
+  "k8.EQ": "\\overline{A_1}\\overline{A_0}\\overline{B_1}\\overline{B_0} + \\overline{A_1}A_0\\overline{B_1}B_0 + A_1\\overline{A_0}B_1\\overline{B_0} + A_1A_0B_1B_0",
+  "k8.EQ.on": [
+   0,
+   5,
+   10,
+   15
+  ],
+  "k8.EQ.dc": [],
+  "k8.LT": "\\overline{A_1}\\overline{A_0}B_0 + \\overline{A_1}B_1 + \\overline{A_0}B_1B_0",
+  "k8.LT.on": [
+   1,
+   2,
+   3,
+   6,
+   7,
+   11
+  ],
+  "k8.LT.dc": [],
+  "k9.P": "E_{25B}E_{10}E_5 + E_{25A}E_{10}E_5 + E_{25A}E_{25B}",
+  "k9.P.on": [
+   7,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k9.P.dc": [],
+  "k9.C10A": "E_{25A}E_{25B}",
+  "k9.C10A.on": [
+   12,
+   13,
+   14,
+   15
+  ],
+  "k9.C10A.dc": [],
+  "k9.C10B": "E_{25A}E_{25B}E_{10}",
+  "k9.C10B.on": [
+   14,
+   15
+  ],
+  "k9.C10B.dc": [],
+  "k9.C5": "E_{25A}E_{25B}E_5",
+  "k9.C5.on": [
+   13,
+   15
+  ],
+  "k9.C5.dc": [],
+  "k9.max": 65,
+  "k10.a": "N_2N_0 + N_2N_1 + N_3",
+  "k10.a.on": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "k10.a.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.b": "N_2N_1 + N_3",
+  "k10.b.on": [
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "k10.b.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.c": "N_2N_1N_0 + N_3",
+  "k10.c.on": [
+   7,
+   8,
+   9,
+   10
+  ],
+  "k10.c.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.d": "N_3N_0 + N_3N_1",
+  "k10.d.on": [
+   9,
+   10
+  ],
+  "k10.d.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.e": "N_3N_1",
+  "k10.e.on": [
+   10
+  ],
+  "k10.e.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.f": "N_3N_1",
+  "k10.f.on": [
+   10
+  ],
+  "k10.f.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k10.g": "\\overline{N_3}\\overline{N_2} + \\overline{N_3}\\overline{N_1}\\overline{N_0}",
+  "k10.g.on": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "k10.g.dc": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k17.D": "E_3E_1 + E_3E_2",
+  "k17.D.on": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "k17.D.dc": [],
+  "k17.U3": "E_3\\overline{E_2}\\overline{E_1}",
+  "k17.U3.on": [
+   8,
+   9
+  ],
+  "k17.U3.dc": [],
+  "k17.U2": "\\overline{E_3}E_2 + E_2E_1",
+  "k17.U2.on": [
+   4,
+   5,
+   6,
+   7,
+   14,
+   15
+  ],
+  "k17.U2.dc": [],
+  "k17.U1": "\\overline{E_3}E_1 + E_3E_2\\overline{E_1}",
+  "k17.U1.on": [
+   2,
+   3,
+   6,
+   7,
+   12,
+   13
+  ],
+  "k17.U1.dc": [],
+  "k17.U0": "E_0",
+  "k17.U0.on": [
+   1,
+   3,
+   5,
+   7,
+   9,
+   11,
+   13,
+   15
+  ],
+  "k17.U0.dc": [],
+  "a1.J1": "Q_0E",
+  "a1.K1": "\\overline{E}",
+  "a1.J0": "\\overline{Q_1}E",
+  "a1.K0": "1",
+  "a1.S0": "Q_1E",
+  "a2.J1": "Q_0\\overline{E}",
+  "a2.K1": "E",
+  "a2.J0": "\\overline{Q_1}\\overline{E}",
+  "a2.K0": "1",
+  "a2.S0": "Q_1\\overline{E}",
+  "a3.J1": "Q_0\\overline{E}",
+  "a3.K1": "\\overline{Q_0}\\overline{E} + Q_0E",
+  "a3.J0": "E",
+  "a3.K0": "\\overline{E}",
+  "a3.S0": "Q_1Q_0E",
+  "a3.nestados": 4,
+  "a3.nq": 2,
+  "a3.trans": [
+   [
+    "S0",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S0",
+    1,
+    "S1",
+    0
+   ],
+   [
+    "S1",
+    0,
+    "S2",
+    0
+   ],
+   [
+    "S1",
+    1,
+    "S1",
+    0
+   ],
+   [
+    "S2",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S2",
+    1,
+    "S3",
+    0
+   ],
+   [
+    "S3",
+    0,
+    "S2",
+    0
+   ],
+   [
+    "S3",
+    1,
+    "S1",
+    1
+   ]
+  ],
+  "a5a.J1": "Q_0E",
+  "a5a.K1": "\\overline{E}",
+  "a5a.J0": "E",
+  "a5a.K0": "\\overline{Q_1} + \\overline{E}",
+  "a5a.S0": "Q_1Q_0E",
+  "a5a.nestados": 4,
+  "a5a.nq": 2,
+  "a5a.trans": [
+   [
+    "S0",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S0",
+    1,
+    "S1",
+    0
+   ],
+   [
+    "S1",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S1",
+    1,
+    "S2",
+    0
+   ],
+   [
+    "S2",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S2",
+    1,
+    "S3",
+    0
+   ],
+   [
+    "S3",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S3",
+    1,
+    "S3",
+    1
+   ]
+  ],
+  "a5b.J2": "Q_1Q_0E",
+  "a5b.K2": "1",
+  "a5b.J1": "Q_0E + Q_2E",
+  "a5b.K1": "Q_0",
+  "a5b.J0": "\\overline{Q_2}\\overline{Q_1}E + Q_1\\overline{E}",
+  "a5b.K0": "1",
+  "a5b.S0": "Q_2E",
+  "a5b.nestados": 5,
+  "a5b.nq": 3,
+  "a5b.trans": [
+   [
+    "S0",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S0",
+    1,
+    "S1",
+    0
+   ],
+   [
+    "S1",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S1",
+    1,
+    "S2",
+    0
+   ],
+   [
+    "S2",
+    0,
+    "S3",
+    0
+   ],
+   [
+    "S2",
+    1,
+    "S2",
+    0
+   ],
+   [
+    "S3",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S3",
+    1,
+    "S4",
+    0
+   ],
+   [
+    "S4",
+    0,
+    "S0",
+    0
+   ],
+   [
+    "S4",
+    1,
+    "S2",
+    1
+   ]
+  ],
+  "a7.nestados": 5,
+  "a7.estados": [
+   "S_",
+   "S_1",
+   "S_10",
+   "S_11",
+   "S_101"
+  ],
+  "a7.J2": "Q_1\\overline{Q_0}E",
+  "a7.K2": "1",
+  "a7.J1": "Q_0 + Q_2",
+  "a7.K1": "\\overline{Q_0}",
+  "a7.J0": "\\overline{Q_1}E",
+  "a7.K0": "\\overline{E}",
+  "a7.S0": "Q_1Q_0\\overline{E} + Q_2\\overline{E}",
+  "a9.J0": "E_1E_0",
+  "a9.K0": "\\overline{E_1}\\overline{E_0}",
+  "a9.S0": "\\overline{Q_0}\\overline{E_1}E_0 + \\overline{Q_0}E_1\\overline{E_0} + Q_0\\overline{E_1}\\overline{E_0} + Q_0E_1E_0",
+  "a11.J1": "\\overline{Q_0}\\overline{E} + Q_0E",
+  "a11.K1": "\\overline{Q_0}\\overline{E} + Q_0E",
+  "a11.J0": "1",
+  "a11.K0": "1",
+  "a11.S0": "Q_0",
+  "a11.S1": "Q_1",
+  "a11.traza": [
+   1,
+   2,
+   3,
+   0,
+   1,
+   0,
+   3,
+   2,
+   1
+  ]
+ },
+ "CHK": [
+  {
+   "id": "k1.S",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k2.C1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k2.C0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k2.R1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k2.R0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k4.S3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k4.S2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k4.S1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k4.S0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k5.TA",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k5.MA",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k5.I",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k5.MR",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.a",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.c",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.d",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.e",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.f",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k6.g",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.a",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.c",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.d",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.e",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.f",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k7.g",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k8.GT",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k8.EQ",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k8.LT",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k9.P",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k9.C10A",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k9.C10B",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k9.C5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.a",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.c",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.d",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.e",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.f",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k10.g",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k17.D",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k17.U3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k17.U2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k17.U1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "k17.U0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a1.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a1.exhaustivo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a2.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a2.exhaustivo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a3.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a3.exhaustivo",
+   "ok": true,
+   "detail": "secuencias hasta longitud 12"
+  },
+  {
+   "id": "a5a.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a5a.exhaustivo",
+   "ok": true,
+   "detail": "secuencias hasta longitud 12"
+  },
+  {
+   "id": "a5b.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a5b.exhaustivo",
+   "ok": true,
+   "detail": "secuencias hasta longitud 12"
+  },
+  {
+   "id": "a7.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a7.exhaustivo",
+   "ok": true,
+   "detail": "5 estados"
+  },
+  {
+   "id": "a9.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a9.suma",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a11.puertas",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "id": "a11.traza",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

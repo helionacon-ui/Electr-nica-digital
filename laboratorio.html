@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Prácticas y simulador · Electrónica Digital</title><meta name="description" content="Guía de estudio completa de Electrónica Digital (3.º Ingeniería Biomédica, UPCT): teoría, exámenes resueltos, prácticas con VHDL, simuladores y autoevaluación.">
+<meta name="theme-color" content="#2457d6"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png"><script>window.SEARCH_URL="search.json";window.SW_URL="sw.js";</script><link rel="stylesheet" href="assets/app.css"></head>
+<body>
+<div class="hubbar"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/">← Todas las guías GIEyA</a></div>
+<header class="top"><button class="btn hamb" id="hamb" aria-label="Menú">☰</button>
+<div class="brand">Electrónica Digital <small>Actualizada el 8 de noviembre de 2026</small></div>
+<button class="btn" id="expand" type="button">Desplegar todo</button><button class="btn" id="theme" type="button" aria-label="Cambiar tema">◐</button></header>
+<div class="shell"><nav class="side" aria-label="Índice"><div class="search"><input id="q" type="search" placeholder="Buscar en toda la guía…" aria-label="Buscar"></div><div id="hits"></div><h5>Empezar</h5><a href="index.html" data-pg="index" style="--tc:var(--c1)"><i class="dot"></i><span>Portada</span></a><a href="empezar.html" data-pg="empezar" style="--tc:var(--c1)"><i class="dot"></i><span>El examen y cómo estudiar</span></a><h5>Unidad 1 · Introducción</h5><a href="tema-0-3.html" data-pg="tema-0-3" style="--tc:var(--c1)"><i class="dot"></i><span>T0–T3 · Fundamentos y álgebra de Boole</span></a><h5>Unidad 2 · Combinacional</h5><a href="tema-4-5.html" data-pg="tema-4-5" style="--tc:var(--c3)"><i class="dot"></i><span>T4–T5 · Familias lógicas y combinacional</span></a><h5>Unidad 3 · Secuencial</h5><a href="tema-6-9.html" data-pg="tema-6-9" style="--tc:var(--c4)"><i class="dot"></i><span>T6–T9 · Biestables, memorias, contadores y registros</span></a><a href="tema-10-11.html" data-pg="tema-10-11" style="--tc:var(--c5)"><i class="dot"></i><span>T10–T11 · Autómatas síncronos y descripciones</span></a><h5>Unidad 4 · Programable</h5><a href="tema-12-13.html" data-pg="tema-12-13" style="--tc:var(--c6)"><i class="dot"></i><span>T12–T13 · Lógica programable y VHDL</span></a><h5>Prácticas</h5><a href="laboratorio.html" data-pg="laboratorio" class="on" style="--tc:var(--c7)"><i class="dot"></i><span>Prácticas y simulador</span></a><a class="sub" href="#p1" style="--tc:var(--c7)"><span>P1 · Entorno ISE y Basys</span></a><a class="sub" href="#p2" style="--tc:var(--c7)"><span>P2 · Combinacional</span></a><a class="sub" href="#p3" style="--tc:var(--c7)"><span>P3 · Secuenciales</span></a><a class="sub" href="#p4" style="--tc:var(--c7)"><span>P4 · VHDL (con IA)</span></a><a class="sub" href="#p567" style="--tc:var(--c7)"><span>P5–P7 · Proyecto integrador</span></a><h5>Practicar</h5><a href="examenes.html" data-pg="examenes" style="--tc:var(--c8)"><i class="dot"></i><span>Exámenes resueltos paso a paso</span></a><a href="hojas.html" data-pg="hojas" style="--tc:var(--c8)"><i class="dot"></i><span>Hojas de problemas resueltas</span></a><a href="demostraciones.html" data-pg="demostraciones" style="--tc:var(--c8)"><i class="dot"></i><span>Demostraciones</span></a><a href="autoevaluacion.html" data-pg="autoevaluacion" style="--tc:var(--c8)"><i class="dot"></i><span>Autoevaluación</span></a><a href="simulacros.html" data-pg="simulacros" style="--tc:var(--c8)"><i class="dot"></i><span>Simulacros con soluciones</span></a><h5>Repasar</h5><a href="formulario.html" data-pg="formulario" style="--tc:var(--c1)"><i class="dot"></i><span>Formulario por tema</span></a><a href="glosario.html" data-pg="glosario" style="--tc:var(--c1)"><i class="dot"></i><span>Glosario</span></a><a href="plan.html" data-pg="plan" style="--tc:var(--c1)"><i class="dot"></i><span>Plan de estudio</span></a><h5>Todo junto</h5><a href="guia-completa.html" style="--tc:var(--c7)"><i class="dot"></i><span>Guía completa en una página</span></a><a href="pdf.html" style="--tc:var(--c7)"><i class="dot"></i><span>Descargas en PDF</span></a></nav><main><div class="page"><section class="blk" id="p1" style="--tc:var(--c2)"><div class="bhead"><div class="kick">Prácticas (20 % de la nota)</div><h1>Práctica 1 · Introducción al diseño con herramientas CAD/EDA</h1><p>Crear un proyecto en Xilinx ISE, describir un circuito y probarlo en la placa Basys.</p></div><aside class="box idea"><div class="boxh"><span class="ic">💡</span> Cómo se evalúa</div><p>Las prácticas pesan el <strong>20 %</strong>. Se evalúan con memorias e informes y, y, según se decida en el curso, con pruebas prácticas. Hay que <strong>defender</strong> el trabajo: explicar cómo funciona cada diseño y por qué tomaste cada decisión. Es obligatorio asistir (mínimo 80 %) y sacar <strong>al menos un 4,0</strong> en teoría y en prácticas para aprobar. Si usas IA para generar código (permitido en la Práctica 4), tienes que <strong>entenderlo, revisarlo y justificarlo</strong>.</p></aside>
+<h2 id="h71">Simulador de las prácticas</h2>
+<p>Elige una función, cambia los valores y mira el código VHDL equivalente, la salida tipo consola y el cronograma. Los botones «Abrir en el simulador» de cada práctica cargan aquí el ejemplo correspondiente.</p>
+<div class="sim" data-sim="prac"><noscript>Este simulador necesita JavaScript.</noscript></div>
+<h2 id="h72">Objetivo</h2>
+<p>Aprender el flujo completo con una función trivial: describir, simular, sintetizar, asignar pines y programar la placa.</p>
+<h2 id="h73">Pasos</h2>
+<article class="ej" id="p1-s1" data-tags="vhdl" data-origen="Práctica 1"><header class="ejh"><span class="ejid">Práctica 1</span><h4>Crear el proyecto y describir el circuito</h4></header><div class="enun"><p>Crea un proyecto en Xilinx Foundation/ISE para la FPGA de la placa Basys y describe un circuito que enlace interruptores con LEDs.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Herramientas: entorno ISE, captura de esquemáticos, diagramas de estados y VHDL (los tres modos de entrada de diseño). Ya conoces <code>entity</code>/<code>architecture</code> del <a class="xref" data-ref="t13" href="tema-12-13.html#t13">Tema 13</a>.</p></aside><details class="paso"><summary><span class="pn">1</span> Nuevo proyecto</summary><div class="pbody"><p>En ISE: <em>File → New Project</em>. Elige el nombre, la familia de la FPGA y el dispositivo que indica la placa Basys (consulta el manual de tu placa). Indica lenguaje <strong>VHDL</strong> y simulador <strong>ISim</strong>.</p></div></details><details class="paso"><summary><span class="pn">2</span> Nueva fuente</summary><div class="pbody"><p><em>Project → New Source → VHDL Module</em>. Pega el código de abajo (o dibuja el esquemático equivalente con puertas AND, OR, XOR).</p></div></details><details class="paso"><summary><span class="pn">3</span> Comprueba la sintaxis</summary><div class="pbody"><p>Haz doble clic en <em>Check Syntax</em>. Debe terminar sin errores.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Un módulo <code>p1_leds</code> con 8 interruptores, 4 pulsadores y 8 LEDs, listo para simular.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p1_leds.vhd</span></div><pre class="code"><code>-- Práctica 1: entradas y salidas de la placa Basys.
+-- Cada interruptor enciende el LED de su mismo número.
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p1_leds is
+  port (
+    sw  : in  std_logic_vector(7 downto 0);   -- interruptores
+    btn : in  std_logic_vector(3 downto 0);   -- pulsadores
+    led : out std_logic_vector(7 downto 0)    -- LEDs
+  );
+end p1_leds;
+
+architecture flujo of p1_leds is
+begin
+  -- Los 4 LEDs bajos copian los interruptores; los 4 altos muestran un AND y un OR de ejemplo.
+  led(3 downto 0) &lt;= sw(3 downto 0);
+  led(4) &lt;= sw(0) and sw(1);          -- AND
+  led(5) &lt;= sw(0) or  sw(1);          -- OR
+  led(6) &lt;= sw(0) xor sw(1);          -- XOR
+  led(7) &lt;= btn(0);                   -- el pulsador 0 enciende el LED 7
+end flujo;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="leds">Abrir en el simulador</a></div>
+<article class="ej" id="p1-s2" data-tags="vhdl" data-origen="Práctica 1"><header class="ejh"><span class="ejid">Práctica 1</span><h4>Simular, asignar pines y programar</h4></header><div class="enun"><p>Simula el módulo, asigna las señales a los pines de la placa y programa la FPGA.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Flujo: simulación funcional → síntesis → implementación → asignación de pines (UCF) → fichero de configuración → programación.</p></aside><details class="paso"><summary><span class="pn">1</span> Simulación</summary><div class="pbody"><p>Crea un <em>test bench</em> o usa el simulador de ISE: pon <code>sw=00000011</code>. Espera <code>led=00110011</code> (AND=1, OR=1, XOR=0).</p></div></details><details class="paso"><summary><span class="pn">2</span> Asignación de pines</summary><div class="pbody"><p>Crea un fichero de restricciones (UCF) que una cada señal con su pin físico. Ejemplo (<strong>comprueba los pines con el manual de tu placa</strong>):</p></div></details><details class="paso"><summary><span class="pn">3</span> Síntesis, implementación y bitstream</summary><div class="pbody"><p><em>Synthesize → Implement Design → Generate Programming File</em>. Si hay avisos de «latch» o de señales sin pin, léelos.</p></div></details><details class="paso"><summary><span class="pn">4</span> Programar</summary><div class="pbody"><p>Con la placa conectada, ejecuta iMPACT y carga el fichero <code>.bit</code>. Mueve los interruptores y comprueba los LEDs.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Los LEDs siguen los interruptores. Si no se enciende ninguno, lo primero que hay que mirar es la asignación de pines y que el fichero se haya cargado.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>text · p1_basys.ucf</span></div><pre class="code"><code># Restricciones de ejemplo. COMPRUEBA los pines con el manual de TU placa Basys antes de usarlos.
+NET "sw&lt;0&gt;"  LOC = "P11";
+NET "sw&lt;1&gt;"  LOC = "L3";
+NET "sw&lt;2&gt;"  LOC = "K3";
+NET "sw&lt;3&gt;"  LOC = "B4";
+NET "led&lt;0&gt;" LOC = "M5";
+NET "led&lt;1&gt;" LOC = "M11";
+NET "led&lt;2&gt;" LOC = "P7";
+NET "led&lt;3&gt;" LOC = "P6";
+# (resto de pines igual: un NET por señal)</code></pre></div>
+<h2 id="h74">Salida esperada</h2>
+<div class="codeblock"><div class="codehead"><span>text · Resultado del modelo Python (salida esperada en la placa)</span></div><pre class="code"><code>sw        btn0  led
+00000000  0     00000000
+00000001  0     01100001
+00000011  0     00110011
+00000010  1     11100010
+00001111  1     10111111</code></pre></div>
+<h2 id="h75">Qué escribir en la memoria</h2>
+<ul><li>Un esquema del circuito y su tabla de verdad.</li><li>Una captura de la simulación con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">00000011</span></span></span></span> y la explicación del valor de cada LED.</li><li>Una frase sobre qué hace cada paso del flujo (síntesis, implementación, programación).</li><li>Cuál fue el error más típico que cometiste (por ejemplo, pines mal asignados) y cómo lo resolviste.</li></ul></section><section class="blk" id="p2" style="--tc:var(--c3)"><div class="bhead"><div class="kick">Prácticas (20 % de la nota)</div><h1>Práctica 2 · Diseño e implementación de sistemas combinacionales</h1><p>Sumador, comparador, multiplexor y display de 7 segmentos, mostrados en LEDs y displays.</p></div><h2 id="h76">Objetivo</h2>
+<p>Diseñar con esquemático y con VHDL los bloques combinacionales del <a class="xref" data-ref="t05" href="tema-4-5.html#t05">Tema 5</a> y verlos funcionar en LEDs y displays.</p>
+<article class="ej" id="p2-s1" data-tags="vhdl arit" data-origen="Práctica 2"><header class="ejh"><span class="ejid">Práctica 2</span><h4>Sumador de 4 bits</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Describe un sumador de 4 bits con acarreo de entrada y salida. Muestra la suma en 4 LEDs y el acarreo en un quinto.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: sumador completo y en cascada (<a class="xref" data-ref="t05" href="tema-4-5.html#t05">T5</a>); aritmética con <code>unsigned</code> (<a class="xref" data-ref="t13" href="tema-12-13.html#t13">T13</a>).</p></aside><details class="paso"><summary><span class="pn">1</span> Qué se pide</summary><div class="pbody"><p>Entradas <code>a</code>, <code>b</code> (4 bits) y <code>cin</code>; salidas <code>s</code> (4 bits) y <code>cout</code>.</p></div></details><details class="paso"><summary><span class="pn">2</span> Idea</summary><div class="pbody"><p>Para no perder el acarreo, se hace la suma en <strong>5 bits</strong>: se amplían <code>a</code> y <code>b</code> con un <code>'0'</code> por la izquierda. El bit más significativo es <code>cout</code>.</p></div></details><details class="paso"><summary><span class="pn">3</span> Código</summary><div class="pbody"><p>Ver abajo.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">in</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mord"><span class="mord mathrm">mod</span></span></span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span></span></span></span> y <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">co</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌊(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">in</span><span class="mclose">)</span><span class="mord">/16</span><span class="mclose">⌋</span></span></span></span>. Comprobado con las 512 combinaciones del modelo.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p2_sum4.vhd</span></div><pre class="code"><code>-- Práctica 2: sumador de 4 bits con acarreo de entrada y de salida.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity p2_sum4 is
+  port (
+    a, b : in  std_logic_vector(3 downto 0);
+    cin  : in  std_logic;
+    s    : out std_logic_vector(3 downto 0);
+    cout : out std_logic
+  );
+end p2_sum4;
+
+architecture rtl of p2_sum4 is
+  signal t : unsigned(4 downto 0);        -- un bit más para el acarreo
+begin
+  t    &lt;= ('0' &amp; unsigned(a)) + ('0' &amp; unsigned(b)) + ("0000" &amp; cin);
+  s    &lt;= std_logic_vector(t(3 downto 0));
+  cout &lt;= t(4);
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="sum4">Abrir en el simulador</a></div>
+<article class="ej" id="p2-s2" data-tags="vhdl comb" data-origen="Práctica 2"><header class="ejh"><span class="ejid">Práctica 2</span><h4>Comparador y multiplexor</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Diseña un comparador de 4 bits con salidas <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span> y un multiplexor 4:1.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: comparador y multiplexor (<a class="xref" data-ref="t05" href="tema-4-5.html#t05">T5</a>); <code>when ... else</code> y <code>with ... select</code> (<a class="xref" data-ref="t13" href="tema-12-13.html#t13">T13</a>).</p></aside><details class="paso"><summary><span class="pn">1</span> Comparador</summary><div class="pbody"><p>Con <code>unsigned</code> el comparador es una línea por salida. <strong>Exactamente una</strong> de las tres salidas vale 1: es una buena comprobación.</p></div></details><details class="paso"><summary><span class="pn">2</span> Multiplexor</summary><div class="pbody"><p>Un <code>with sel select</code> enumera las cuatro posibilidades de <code>sel</code>; la última usa <code>others</code> para cubrir los valores no binarios de <code>std_logic</code>.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Comparador: una y solo una salida a 1. Mux: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">se</span><span class="mord mathnormal mtight" style="margin-right:0.0197em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p2_cmp4.vhd</span></div><pre class="code"><code>-- Práctica 2: comparador de 4 bits.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity p2_cmp4 is
+  port (
+    a, b       : in  std_logic_vector(3 downto 0);
+    gt, eq, lt : out std_logic
+  );
+end p2_cmp4;
+
+architecture rtl of p2_cmp4 is
+begin
+  gt &lt;= '1' when unsigned(a) &gt;  unsigned(b) else '0';
+  eq &lt;= '1' when unsigned(a) =  unsigned(b) else '0';
+  lt &lt;= '1' when unsigned(a) &lt;  unsigned(b) else '0';
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="cmp4">Abrir en el simulador</a></div>
+<div class="codeblock"><div class="codehead"><span>vhdl · p2_mux4.vhd</span></div><pre class="code"><code>-- Práctica 2: multiplexor 4 a 1 (dos descripciones equivalentes).
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p2_mux4 is
+  port (
+    d   : in  std_logic_vector(3 downto 0);
+    sel : in  std_logic_vector(1 downto 0);
+    y   : out std_logic
+  );
+end p2_mux4;
+
+architecture rtl of p2_mux4 is
+begin
+  with sel select
+    y &lt;= d(0) when "00",
+         d(1) when "01",
+         d(2) when "10",
+         d(3) when others;
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="mux4">Abrir en el simulador</a></div>
+<article class="ej" id="p2-s3" data-tags="vhdl msi" data-origen="Práctica 2"><header class="ejh"><span class="ejid">Práctica 2</span><h4>Display de 7 segmentos</h4></header><div class="enun"><p>Muestra en un display de 7 segmentos de la Basys una cifra BCD recibida por los interruptores.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: decodificador BCD a 7 segmentos con indiferentes en <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1010</span></span></span></span>–<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1111</span></span></span></span> (<a class="xref" data-ref="t05" href="tema-4-5.html#t05">T5</a>); en la Basys los segmentos son <strong>activos a nivel bajo</strong>.</p></aside><details class="paso"><summary><span class="pn">1</span> Tabla</summary><div class="pbody"><p>Para cada cifra, qué segmentos (a a g) deben encenderse. En lógica positiva el 8 enciende los siete; en la Basys hay que <strong>invertir</strong>.</p></div></details><details class="paso"><summary><span class="pn">2</span> Código</summary><div class="pbody"><p>Un <code>with d select</code> con las 10 cifras, y <code>"1111111"</code> (apagado) para el resto.</p></div></details><details class="paso"><summary><span class="pn">3</span> Activa un dígito</summary><div class="pbody"><p>La Basys tiene 4 dígitos con ánodo común: para ver una cifra hay que <strong>activar el ánodo</strong> de ese dígito (a nivel bajo).</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Con <code>d=0111</code> el display muestra un 7: segmentos a, b, c a 0 (encendidos), el resto a 1.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p2_seg7.vhd</span></div><pre class="code"><code>-- Práctica 2: decodificador BCD a 7 segmentos para la Basys (segmentos activos a nivel bajo).
+-- seg = (a, b, c, d, e, f, g). Un 0 enciende el segmento.
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p2_seg7 is
+  port (
+    d   : in  std_logic_vector(3 downto 0);
+    seg : out std_logic_vector(6 downto 0)
+  );
+end p2_seg7;
+
+architecture rtl of p2_seg7 is
+begin
+  with d select
+    seg &lt;= "0000001" when "0000",  -- 0
+           "1001111" when "0001",  -- 1
+           "0010010" when "0010",  -- 2
+           "0000110" when "0011",  -- 3
+           "1001100" when "0100",  -- 4
+           "0100100" when "0101",  -- 5
+           "0100000" when "0110",  -- 6
+           "0001111" when "0111",  -- 7
+           "0000000" when "1000",  -- 8
+           "0000100" when "1001",  -- 9
+           "1111111" when others;  -- apagado (1010 a 1111 no son BCD)
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="seg7">Abrir en el simulador</a></div>
+<h2 id="h77">Salida esperada</h2>
+<div class="codeblock"><div class="codehead"><span>text · Resultado del modelo Python</span></div><pre class="code"><code>--- sumador de 4 bits ---
+ 9 +  8 + 0 = s 0001 ( 1), cout 1
+15 +  1 + 0 = s 0000 ( 0), cout 1
+ 7 +  8 + 1 = s 0000 ( 0), cout 1
+15 + 15 + 1 = s 1111 (15), cout 1
+--- comparador ---
+a= 5 b= 9 -&gt; gt,eq,lt = (0, 0, 1)
+a= 9 b= 9 -&gt; gt,eq,lt = (0, 1, 0)
+a=12 b= 3 -&gt; gt,eq,lt = (1, 0, 0)
+--- mux 4:1 (d=0110) ---
+sel=00 -&gt; y=0
+sel=01 -&gt; y=1
+sel=10 -&gt; y=1
+sel=11 -&gt; y=0
+--- display (activo a 0, abcdefg) ---
+ 0 -&gt; 0000001
+ 1 -&gt; 1001111
+ 7 -&gt; 0001111
+ 9 -&gt; 0000100
+12 -&gt; 1111111
+Comprobaciones exhaustivas: OK</code></pre></div>
+<h2 id="h78">Qué escribir en la memoria</h2>
+<ul><li>La tabla de verdad del decodificador y las ecuaciones simplificadas (con indiferentes).</li><li>Una comparación del esquemático y del VHDL: cuántos recursos usa cada uno.</li><li>Capturas de la simulación del sumador con un caso con acarreo (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">15</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>).</li><li>Por qué en el display se usa lógica negativa.</li></ul></section><section class="blk" id="p3" style="--tc:var(--c4)"><div class="bhead"><div class="kick">Prácticas (20 % de la nota)</div><h1>Práctica 3 · Diseño de sistemas secuenciales</h1><p>Contadores, divisor de frecuencia, antirrebote y máquinas de estados con reloj.</p></div><h2 id="h79">Objetivo</h2>
+<p>Diseñar sistemas sincronizados con reloj: contadores, registros y divisores de frecuencia, máquinas de estados y tratamiento del rebote de los pulsadores (<a class="xref" data-ref="t08" href="tema-6-9.html#t08">T8</a>, <a class="xref" data-ref="t09" href="tema-6-9.html#t09">T9</a>, <a class="xref" data-ref="t10" href="tema-10-11.html#t10">T10</a>).</p>
+<article class="ej" id="p3-s1" data-tags="vhdl cont" data-origen="Práctica 3"><header class="ejh"><span class="ejid">Práctica 3</span><h4>Contador módulo N</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Diseña un contador síncrono de módulo <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span> configurable, con reset asíncrono, habilitación y una salida de fin de cuenta.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: contador de módulo <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span>, biestables <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span><span class="mop"><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">⌉</span></span></span></span> (<a class="xref" data-ref="t08" href="tema-6-9.html#t08">T8</a>); proceso síncrono con reset asíncrono (<a class="xref" data-ref="t13" href="tema-12-13.html#t13">T13</a>).</p></aside><details class="paso"><summary><span class="pn">1</span> Estructura</summary><div class="pbody"><p>Un único proceso con <code>clk</code> y <code>rst</code> en la lista de sensibilidad. El reset va <strong>antes</strong> que el flanco.</p></div></details><details class="paso"><summary><span class="pn">2</span> Módulo N</summary><div class="pbody"><p>Si <code>cnt = N-1</code> vuelve a 0; si no, incrementa. El <code>generic N</code> hace el diseño reutilizable.</p></div></details><details class="paso"><summary><span class="pn">3</span> Fin de cuenta</summary><div class="pbody"><p><code>fin</code> vale 1 cuando <code>cnt = N-1</code>: sirve para encadenar contadores.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Secuencia <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span></span></span></span>. Para <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span>: 4 biestables.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p3_contador.vhd</span></div><pre class="code"><code>-- Práctica 3: contador síncrono de módulo N con reset asíncrono y habilitación.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity p3_contador is
+  generic ( N : positive := 10 );
+  port (
+    clk, rst, en : in  std_logic;
+    q            : out std_logic_vector(3 downto 0);
+    fin          : out std_logic                       -- vale 1 en el último estado
+  );
+end p3_contador;
+
+architecture rtl of p3_contador is
+  signal cnt : unsigned(3 downto 0) := (others =&gt; '0');
+begin
+  process (clk, rst)
+  begin
+    if rst = '1' then
+      cnt &lt;= (others =&gt; '0');
+    elsif rising_edge(clk) then
+      if en = '1' then
+        if cnt = N - 1 then
+          cnt &lt;= (others =&gt; '0');
+        else
+          cnt &lt;= cnt + 1;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  q   &lt;= std_logic_vector(cnt);
+  fin &lt;= '1' when cnt = N - 1 else '0';
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="cnt">Abrir en el simulador</a></div>
+<article class="ej" id="p3-s2" data-tags="vhdl cont" data-origen="Práctica 3"><header class="ejh"><span class="ejid">Práctica 3</span><h4>Divisor de frecuencia</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Genera una señal de 1 Hz a partir del reloj de 50 MHz de la placa y úsala para hacer parpadear un LED.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: contador como divisor (<a class="xref" data-ref="t08" href="tema-6-9.html#t08">T8</a>); <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">in</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p></aside><details class="paso"><summary><span class="pn">1</span> Cálculo</summary><div class="pbody"><p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span>. La salida conmuta cada <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mord">/2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">25</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span> ciclos: se cuenta de <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">24</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">999</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">999</span></span></span></span> (25 bits).</p></div></details><details class="paso"><summary><span class="pn">2</span> Código</summary><div class="pbody"><p>Contador con comparación y una señal <code>s</code> que se invierte al llegar al final.</p></div></details><details class="paso"><summary><span class="pn">3</span> Prueba</summary><div class="pbody"><p>En simulación no esperes 25 millones de ciclos: baja <code>DIV</code> (por ejemplo, a 10) en el <em>test bench</em> y comprueba la forma de onda.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>LED parpadeando a 1 Hz (medio segundo encendido y medio apagado).</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p3_divisor.vhd</span></div><pre class="code"><code>-- Práctica 3: divisor de frecuencia. Con reloj de 50 MHz y DIV = 50_000_000 da una salida de 1 Hz.
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p3_divisor is
+  generic ( DIV : positive := 50_000_000 );     -- relación f_in / f_out (número par)
+  port (
+    clk, rst : in  std_logic;
+    clk_out  : out std_logic
+  );
+end p3_divisor;
+
+architecture rtl of p3_divisor is
+  signal cnt : integer range 0 to DIV/2 - 1 := 0;
+  signal s   : std_logic := '0';
+begin
+  process (clk, rst)
+  begin
+    if rst = '1' then
+      cnt &lt;= 0; s &lt;= '0';
+    elsif rising_edge(clk) then
+      if cnt = DIV/2 - 1 then
+        cnt &lt;= 0;
+        s   &lt;= not s;                           -- conmuta cada medio periodo
+      else
+        cnt &lt;= cnt + 1;
+      end if;
+    end if;
+  end process;
+  clk_out &lt;= s;
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="div">Abrir en el simulador</a></div>
+<article class="ej" id="p3-s3" data-tags="vhdl sec" data-origen="Práctica 3"><header class="ejh"><span class="ejid">Práctica 3</span><h4>Antirrebote de un pulsador</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Un pulsador mecánico rebota unos milisegundos. Diseña un circuito que entregue un nivel limpio.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: sincronizar la entrada con 2 biestables para evitar la metaestabilidad (<a class="xref" data-ref="t06" href="tema-6-9.html#t06">T6</a>) y aceptarla solo si permanece estable un tiempo (<a class="xref" data-ref="t10" href="tema-10-11.html#t10">T10</a>).</p></aside><details class="paso"><summary><span class="pn">1</span> Sincroniza</summary><div class="pbody"><p><code>s1</code> y <code>s2</code> son dos biestables D en serie: la entrada asíncrona se alinea con el reloj.</p></div></details><details class="paso"><summary><span class="pn">2</span> Cuenta de estabilidad</summary><div class="pbody"><p>Si la entrada cambia, reinicia el contador. Si llega a <code>LIM</code> sin cambiar, acepta el valor.</p></div></details><details class="paso"><summary><span class="pn">3</span> Calcula LIM</summary><div class="pbody"><p>20 ms a 50 MHz son <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span> ciclos: contador de 20 bits.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Un solo pulso limpio por pulsación, aunque la señal original rebote.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p3_antirrebote.vhd</span></div><pre class="code"><code>-- Práctica 3: antirrebote. La salida sigue a la entrada solo si esta permanece estable LIM ciclos.
+-- Con reloj de 50 MHz y LIM = 1_000_000 el filtro espera 20 ms.
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p3_antirrebote is
+  generic ( LIM : positive := 1_000_000 );
+  port (
+    clk, btn : in  std_logic;
+    limpio   : out std_logic
+  );
+end p3_antirrebote;
+
+architecture rtl of p3_antirrebote is
+  signal s1, s2 : std_logic := '0';           -- sincronizador de dos biestables
+  signal prev   : std_logic := '0';
+  signal cnt    : integer range 0 to LIM := 0;
+  signal sal    : std_logic := '0';
+begin
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      s1 &lt;= btn;  s2 &lt;= s1;                   -- evita la metaestabilidad
+      if s2 /= prev then                      -- la entrada ha cambiado: reinicia la cuenta
+        prev &lt;= s2;
+        cnt  &lt;= 0;
+      elsif cnt = LIM then
+        sal  &lt;= prev;                         -- estable el tiempo suficiente: se acepta
+      else
+        cnt  &lt;= cnt + 1;
+      end if;
+    end if;
+  end process;
+  limpio &lt;= sal;
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="deb">Abrir en el simulador</a></div>
+<article class="ej" id="p3-s4" data-tags="vhdl sec" data-origen="Práctica 3"><header class="ejh"><span class="ejid">Práctica 3</span><h4>Máquina de estados: detector de secuencia</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Implementa en VHDL el detector Mealy de la secuencia 101 del <a class="xref" data-ref="t10" href="tema-10-11.html#t10">Tema 10</a>.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: diagrama de estados de Mealy y su traducción a dos procesos.</p></aside><details class="paso"><summary><span class="pn">1</span> Tipo enumerado</summary><div class="pbody"><p><code>type estado_t is (S0, S1, S2);</code> deja que la herramienta elija la codificación.</p></div></details><details class="paso"><summary><span class="pn">2</span> Dos procesos</summary><div class="pbody"><p>El primero guarda el estado en el flanco. El segundo, combinacional, calcula <code>sig</code> y <code>z</code> con un <code>case</code>.</p></div></details><details class="paso"><summary><span class="pn">3</span> Evita latches</summary><div class="pbody"><p>Asigna <code>z &lt;= '0'</code> al principio del proceso combinacional: así <code>z</code> se asigna en <strong>todos</strong> los casos.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Para <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span> da <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p3_detector101.vhd</span></div><pre class="code"><code>-- Práctica 3: máquina de estados. Detector Mealy de la secuencia 101 con solape.
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity p3_detector101 is
+  port (
+    clk, rst, x : in  std_logic;
+    z           : out std_logic
+  );
+end p3_detector101;
+
+architecture rtl of p3_detector101 is
+  type estado_t is (S0, S1, S2);
+  signal est, sig : estado_t := S0;
+begin
+  -- Proceso 1: registro de estado (parte secuencial)
+  process (clk, rst)
+  begin
+    if rst = '1' then
+      est &lt;= S0;
+    elsif rising_edge(clk) then
+      est &lt;= sig;
+    end if;
+  end process;
+
+  -- Proceso 2: lógica de siguiente estado y de salida (parte combinacional)
+  process (est, x)
+  begin
+    z &lt;= '0';
+    case est is
+      when S0 =&gt;
+        if x = '1' then sig &lt;= S1; else sig &lt;= S0; end if;
+      when S1 =&gt;
+        if x = '0' then sig &lt;= S2; else sig &lt;= S1; end if;
+      when S2 =&gt;
+        if x = '1' then sig &lt;= S1; z &lt;= '1'; else sig &lt;= S0; end if;
+    end case;
+  end process;
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="det">Abrir en el simulador</a></div>
+<h2 id="h80">Salida esperada</h2>
+<div class="codeblock"><div class="codehead"><span>text · Resultado del modelo Python</span></div><pre class="code"><code>contador mod 10: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2]
+contador mod 12: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1]
+divisor 50 MHz -&gt; 1 Hz: DIV=50000000, cuenta hasta 24999999, 25 bits
+divisor 50 MHz -&gt; 1 kHz: DIV=50000, cuenta hasta 24999, 15 bits
+entrada : 00101011111111010000000000
+salida  : 00000000000011111111110000
+detector 101: x = [1, 0, 1, 0, 1, 1, 0, 1]  z = [0, 0, 1, 0, 1, 0, 0, 1]
+Comprobaciones: OK</code></pre></div>
+<h2 id="h81">Qué escribir en la memoria</h2>
+<ul><li>El diagrama de estados del detector y la tabla de transiciones.</li><li>El cálculo de <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span></span></span></span> y del número de bits del contador del divisor.</li><li>Una captura de la señal del pulsador <strong>con rebotes</strong> y la salida del filtro.</li><li>Una discusión de por qué el reset asíncrono puede dar problemas y cuándo conviene el síncrono.</li></ul></section><section class="blk" id="p4" style="--tc:var(--c5)"><div class="bhead"><div class="kick">Prácticas (20 % de la nota)</div><h1>Práctica 4 · Desarrollo de sistemas digitales mediante VHDL</h1><p>Un sistema completo en VHDL: se permite usar IA, pero hay que entender, revisar y justificar el código.</p></div><aside class="box ojo"><div class="boxh"><span class="ic">⚠️</span> Sobre el uso de IA</div><p>Se permite usar IA como apoyo, pero el código debe ser <strong>comprendido, revisado y justificado por ti</strong>. En la defensa pueden pedirte que expliques una línea, que encuentres un error o que lo modifiques. La forma segura de prepararte: pide el código, <strong>simúlalo</strong>, tradúcelo a un diagrama y <strong>busca los fallos típicos</strong> (latches, reset, reloj dividido, señales no asignadas).</p></aside>
+<h2 id="h82">Objetivo</h2>
+<p>Construir un sistema completo combinando bloques: el ejemplo de la guía muestra cuatro cifras en el display multiplexado de la Basys.</p>
+<article class="ej" id="p4-s1" data-tags="vhdl msi" data-origen="Práctica 4"><header class="ejh"><span class="ejid">Práctica 4</span><h4>Display de 4 dígitos multiplexado</h4><span class="badge ok" title="Resultados comprobados con código">✔ verificado</span></header><div class="enun"><p>Muestra cuatro cifras BCD en el display de 4 dígitos de la Basys. Calcula la frecuencia de refresco.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: multiplexación en el tiempo, contador de refresco, decodificador de 7 segmentos activo a nivel bajo, múltiples dígitos con ánodo común.</p></aside><details class="paso"><summary><span class="pn">1</span> Idea</summary><div class="pbody"><p>Los 4 dígitos comparten los 7 segmentos. Solo uno está activo cada vez. Se alternan tan rápido que el ojo los ve todos encendidos.</p></div></details><details class="paso"><summary><span class="pn">2</span> Contador de refresco</summary><div class="pbody"><p>Un contador libre de 18 bits. Sus dos bits altos eligen el dígito: cada dígito dura <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span></span></span></span> ciclos.</p></div></details><details class="paso"><summary><span class="pn">3</span> Selección</summary><div class="pbody"><p>Un <code>with sel select</code> elige la cifra y activa el ánodo correspondiente (activo a 0).</p></div></details><details class="paso"><summary><span class="pn">4</span> Frecuencias</summary><div class="pbody"><p>Cambio de dígito: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">50</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">MHz</span></span><span class="mord">/</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">762</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">9</span></span></span></span> Hz. Refresco de cada dígito: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">762</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">9/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">190</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">7</span></span></span></span> Hz.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Cuatro cifras estables, sin parpadeo visible, con refresco de <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">190</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">7</span></span></span></span> Hz por dígito.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p4_display4.vhd</span></div><pre class="code"><code>-- Práctica 4: manejo multiplexado de un display de 4 dígitos (Basys). Muestra 4 cifras BCD.
+-- Se enciende un dígito cada vez. Con reloj de 50 MHz se cambia de dígito a 762,9 Hz (50e6/2^16)
+-- y cada dígito se refresca a 190,7 Hz: el ojo los ve todos encendidos y sin parpadeo.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity p4_display4 is
+  port (
+    clk    : in  std_logic;                        -- 50 MHz
+    d3, d2, d1, d0 : in std_logic_vector(3 downto 0);
+    seg    : out std_logic_vector(6 downto 0);     -- activos a nivel bajo
+    an     : out std_logic_vector(3 downto 0)      -- ánodos, activos a nivel bajo
+  );
+end p4_display4;
+
+architecture rtl of p4_display4 is
+  signal cnt : unsigned(17 downto 0) := (others =&gt; '0');   -- 2^16 ciclos por dígito
+  signal sel : std_logic_vector(1 downto 0);
+  signal dig : std_logic_vector(3 downto 0);
+begin
+  process (clk)
+  begin
+    if rising_edge(clk) then cnt &lt;= cnt + 1; end if;
+  end process;
+  sel &lt;= std_logic_vector(cnt(17 downto 16));
+
+  with sel select dig &lt;= d0 when "00", d1 when "01", d2 when "10", d3 when others;
+  with sel select an  &lt;= "1110" when "00", "1101" when "01", "1011" when "10", "0111" when others;
+
+  with dig select
+    seg &lt;= "0000001" when "0000", "1001111" when "0001", "0010010" when "0010",
+           "0000110" when "0011", "1001100" when "0100", "0100100" when "0101",
+           "0100000" when "0110", "0001111" when "0111", "0000000" when "1000",
+           "0000100" when "1001", "1111111" when others;
+end rtl;</code></pre></div>
+<div class="codeblock"><div class="codehead"><span>text · Resultado del modelo Python</span></div><pre class="code"><code>cambio de dígito: 762.9 Hz; refresco de cada dígito: 190.7 Hz
+barrido para mostrar 1 2 3 4:
+  an=1110  cifra=4
+  an=1101  cifra=3
+  an=1011  cifra=2
+  an=0111  cifra=1
+Comprobaciones: OK</code></pre></div>
+<h2 id="h83">Qué escribir en la memoria</h2>
+<ul><li>Las prompts que usaste y qué cambiaste del código generado, y por qué.</li><li>Un diagrama de bloques jerárquico del sistema.</li><li>Los cálculos de frecuencias y tiempos.</li><li>Una lista de <strong>tres errores</strong> que detectaste al revisar el código.</li></ul></section><section class="blk" id="p567" style="--tc:var(--c6)"><div class="bhead"><div class="kick">Prácticas (20 % de la nota)</div><h1>Prácticas 5 a 7 · Proyecto integrador</h1><p>Especificación, implementación e integración de un sistema distribuido que monitoriza una incubadora neonatal.</p></div><h2 id="h84">En qué consisten</h2>
+<p>Es un <strong>proyecto colaborativo</strong> basado en la monitorización de una incubadora neonatal (Dräger Caleo) usada como <strong>entorno de simulación</strong>.</p>
+<div class="tw"><table><thead><tr><th>Práctica</th><th>Qué se hace</th></tr></thead><tbody><tr><td><strong>P5</strong></td><td>Especificación y diseño del proyecto integrador</td></tr><tr><td><strong>P6</strong></td><td>Cada grupo implementa y depura el <strong>módulo asignado</strong> del sistema distribuido, con pruebas individuales y documentación técnica</td></tr><tr><td><strong>P7</strong></td><td>Integración de todos los módulos, validación y <strong>defensa pública</strong> de la solución</td></tr></tbody></table></div>
+<aside class="box ojo"><div class="boxh"><span class="ic">⚠️</span> Qué no sé de tu proyecto</div><p>El programa solo describe el proyecto en general. El módulo concreto que te asignen y los datos exactos de la incubadora se fijan en el curso. El ejemplo de abajo (una alarma de temperatura con histéresis) <strong>no es tu módulo asignado</strong>: está para mostrar cómo se diseña, se prueba y se documenta un módulo típico de un sistema de monitorización.</p></aside>
+<h2 id="h85">Método para cada módulo</h2>
+<ol><li><strong>Especifica</strong> entradas, salidas, rangos y qué debe hacer, con una tabla.</li><li><strong>Diseña</strong> en bloques: qué es combinacional, qué es secuencial.</li><li><strong>Escribe</strong> el código (VHDL) y <strong>simula</strong> con casos límite.</li><li><strong>Prueba</strong> el módulo aislado en la placa.</li><li><strong>Documenta</strong>: interfaz, funcionamiento, pruebas y resultados.</li><li><strong>Integra</strong>: conecta con los demás módulos y comprueba temporización y niveles.</li></ol>
+<h2 id="h86">Ejemplo: alarma de temperatura con histéresis</h2>
+<p>Un sensor da la temperatura en décimas de grado. Se quiere una alarma de alta (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8686em;vertical-align:-0.1944em;"></span><span class="mord">37</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">5</span><span class="mord"><span class="mspace"> </span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>C) y una de baja (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8686em;vertical-align:-0.1944em;"></span><span class="mord">36</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">0</span><span class="mord"><span class="mspace"> </span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>C). Sin histéresis, una medida que oscile alrededor del umbral haría <strong>parpadear</strong> la alarma. Con histéresis, la alarma se <strong>desactiva</strong> solo cuando la medida baja del umbral menos un margen (0,5 °C).</p>
+<article class="ej" id="p567-s1" data-tags="vhdl sec" data-origen="Prácticas 5-7"><header class="ejh"><span class="ejid">Prácticas 5-7</span><h4>Alarma con histéresis</h4></header><div class="enun"><p>Diseña un módulo <code>p6_alarma</code> que reciba <code>temp</code> (10 bits, décimas de grado) y active <code>al_alta</code> si <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">375</span></span></span></span> y <code>al_baja</code> si <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">360</span></span></span></span>, con histéresis de 5 décimas.</p></div><aside class="box antes"><div class="boxh"><span class="ic">🧭</span> Antes de empezar: qué piden y qué teoría usas</div><p>Teoría: comparadores (<a class="xref" data-ref="t05" href="tema-4-5.html#t05">T5</a>), biestable que recuerda el estado de la alarma (<a class="xref" data-ref="t06" href="tema-6-9.html#t06">T6</a>), proceso síncrono (<a class="xref" data-ref="t13" href="tema-12-13.html#t13">T13</a>).</p></aside><details class="paso"><summary><span class="pn">1</span> Qué hay que recordar</summary><div class="pbody"><p>La alarma depende del <strong>pasado</strong> (si ya estaba activa o no) y no solo de la entrada: es un circuito <strong>secuencial</strong> con un biestable por alarma.</p></div></details><details class="paso"><summary><span class="pn">2</span> Reglas</summary><div class="pbody"><p>Alta: se activa con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">T</span><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> y se desactiva con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">T</span><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span></span></span></span>. Baja: se activa con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight" style="margin-right:0.0962em;">J</span><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> y se desactiva con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight" style="margin-right:0.0962em;">J</span><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span></span></span></span>. Entre ambos valores <strong>mantiene</strong> el estado.</p></div></details><details class="paso"><summary><span class="pn">3</span> Código</summary><div class="pbody"><p>Ver abajo.</p></div></details><details class="paso"><summary><span class="pn">4</span> Casos límite que hay que probar</summary><div class="pbody"><p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">374</span></span></span></span> (no activa), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">375</span></span></span></span> (activa), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">373</span></span></span></span> (sigue activa por la histéresis), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">369</span></span></span></span> (se desactiva), y los equivalentes para la baja.</p></div></details><details class="res"><summary>✅ Resultado final</summary><div class="pbody"><p>Para las medidas <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">365</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">370</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">374</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">375</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">376</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">373</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">371</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">369</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span></span></span></span> la alarma de alta se activa en <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">375</span></span></span></span> y se desactiva en <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">369</span></span></span></span>.</p></div></details></article>
+<div class="codeblock"><div class="codehead"><span>vhdl · p6_alarma_incubadora.vhd</span></div><pre class="code"><code>-- Prácticas 5 a 7 (ejemplo de módulo): alarma de temperatura con histéresis para un sistema de monitorización.
+-- Entrada: temperatura en décimas de grado (0 a 1023). Salidas: alarma de alta y de baja.
+-- La histéresis evita que la alarma parpadee cuando la medida oscila alrededor del umbral.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity p6_alarma is
+  generic (
+    T_ALTA  : natural := 375;    -- 37,5 °C: se activa la alarma de alta
+    T_BAJA  : natural := 360;    -- 36,0 °C: se activa la alarma de baja
+    HIST    : natural := 5       -- 0,5 °C de histéresis
+  );
+  port (
+    clk, rst : in  std_logic;
+    temp     : in  std_logic_vector(9 downto 0);
+    al_alta  : out std_logic;
+    al_baja  : out std_logic
+  );
+end p6_alarma;
+
+architecture rtl of p6_alarma is
+  signal t : unsigned(9 downto 0);
+  signal a, b : std_logic := '0';
+begin
+  t &lt;= unsigned(temp);
+  process (clk, rst)
+  begin
+    if rst = '1' then
+      a &lt;= '0'; b &lt;= '0';
+    elsif rising_edge(clk) then
+      if    t &gt;= T_ALTA        then a &lt;= '1';
+      elsif t &lt;  T_ALTA - HIST then a &lt;= '0';
+      end if;
+      if    t &lt;  T_BAJA        then b &lt;= '1';
+      elsif t &gt;= T_BAJA + HIST then b &lt;= '0';
+      end if;
+    end if;
+  end process;
+  al_alta &lt;= a;
+  al_baja &lt;= b;
+end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="alarma">Abrir en el simulador</a></div>
+<div class="codeblock"><div class="codehead"><span>text · Resultado del modelo Python</span></div><pre class="code"><code>temp(0,1 °C)  al_alta  al_baja
+   365        0        0
+   370        0        0
+   374        0        0
+   375        1        0
+   376        1        0
+   373        1        0
+   371        1        0
+   369        0        0
+   366        0        0
+   362        0        0
+   359        0        1
+   361        0        1
+   364        0        1
+   366        0        0
+Comprobaciones: OK</code></pre></div>
+<h2 id="h87">Qué debe contener la documentación y la defensa</h2>
+<ul><li>Una <strong>tabla de interfaz</strong> (señales, ancho, sentido, significado).</li><li>Un <strong>diagrama de bloques</strong> del módulo y de cómo encaja en el sistema.</li><li>La <strong>estrategia de pruebas</strong> (casos normales y límite) y los resultados.</li><li>La <strong>justificación</strong> de cada decisión de diseño (por qué histéresis, por qué ese ancho de bits).</li><li>Si usaste IA: qué pediste, qué cambiaste y cómo comprobaste que es correcto.</li></ul>
+<aside class="box falla"><div class="boxh"><span class="ic">🚧</span> Qué suele fallar</div><ul><li>Integrar sin haber probado cada módulo por separado.</li><li>Interfaces mal acordadas (anchos, polaridad activo-alto/bajo, qué unidad lleva cada dato).</li><li>No documentar las suposiciones.</li><li>Defender código que no entiendes.</li></ul></aside></section><nav class="pager cardgrid"><a class="tile" href="tema-12-13.html"><span>← Anterior</span><b>T12–T13 · Lógica programable y VHDL</b></a><a class="tile" href="examenes.html"><span>Siguiente →</span><b>Exámenes resueltos paso a paso</b></a></nav>
+<div class="foot">Guía no oficial de Electrónica Digital (UPCT) · Última actualización: 8 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
+<script src="assets/sims.js"></script><script src="assets/app.js"></script></body></html>

@@ -1,0 +1,7 @@
+cambio de dígito: 762.9 Hz; refresco de cada dígito: 190.7 Hz
+barrido para mostrar 1 2 3 4:
+  an=1110  cifra=4
+  an=1101  cifra=3
+  an=1011  cifra=2
+  an=0111  cifra=1
+Comprobaciones: OK
