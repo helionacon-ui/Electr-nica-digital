@@ -141,6 +141,37 @@ def fig_timing(signals, slots=None, labels=None, title='', labels_top=None, w_sl
     if title: body += text(W / 2, H - 4, title, 't m')
     return svg(W, H, body, 'Cronograma ' + title, 'fig timing')
 
+# --------------------------------------------------------------------- cronograma con carreras / indeterminación
+def fig_cron(signals, w_slot=12, grid=4, title='', rh=40):
+    """signals: [(nombre, cadena de símbolos por ranura, marcas)] ; símbolos: 0, 1, x (valor desconocido), r (carreras).
+    marcas: cadena del mismo largo con '#' donde la entrada está en situación prohibida (línea gruesa)."""
+    n = max(len(v) for _, v, *_ in signals)
+    ox, oy = 62, 22
+    W = ox + n * w_slot + 12; H = oy + len(signals) * rh + 26
+    body = ''
+    for i in range(0, n + 1, grid):
+        body += line(ox + i * w_slot, oy - 6, ox + i * w_slot, H - 20, 'grid')
+    for k, sg in enumerate(signals):
+        name, vals = sg[0], sg[1]; marks = sg[2] if len(sg) > 2 else ''
+        y0 = oy + k * rh + rh - 14; y1 = oy + k * rh + 8
+        body += text(ox - 8, (y0 + y1) / 2 + 4, name, 't m', 'end')
+        d = ''; prev = None; thick = ''
+        for i, v in enumerate(vals):
+            x = ox + i * w_slot
+            if v in 'xr':
+                cls = 'bandx' if v == 'x' else 'bandr'
+                body += f'<rect x="{x}" y="{y1 - 3}" width="{w_slot}" height="{y0 - y1 + 6}" class="{cls}"/>'
+                prev = None; continue
+            y = y1 if v == '1' else y0
+            if prev is None: d += f'M{x} {y}'
+            elif prev != v: d += f'V{y}'
+            d += f'H{x + w_slot}'; prev = v
+            if i < len(marks) and marks[i] == '#': thick += f'M{x} {y}H{x + w_slot}'
+        body += f'<path d="{d}" class="wave a"/>'
+        if thick: body += f'<path d="{thick}" class="wave proh"/>'
+    if title: body += text(W / 2, H - 4, title, 't m')
+    return svg(W, H, body, 'Cronograma ' + title, 'fig timing cron')
+
 # --------------------------------------------------------------------- diagrama de estados
 def fig_fsm(nodes, edges, W=560, H=300, title='', r=24):
     """nodes: {nombre: (x, y, subtitulo)} ; edges: lista de (a, b, etiqueta, curvatura)"""

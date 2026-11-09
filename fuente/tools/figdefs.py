@@ -37,6 +37,9 @@ def f_fsm(nodes, edges, W=560, H=300, title='', cap=''):
 def f_timing(signals, labels_top=None, title='', slots=None, cap=''):
     return figs.fig_timing([(n, v) for n, v in signals], slots, None, title, labels_top)
 
+def f_cron(signals, title='', w_slot=12, grid=4, rh=40, cap=''):
+    return figs.fig_cron([tuple(x) for x in signals], w_slot, grid, title, rh)
+
 def f_ffsym(kind='JK', cap=''):
     return figs.fig_ff(kind)
 
