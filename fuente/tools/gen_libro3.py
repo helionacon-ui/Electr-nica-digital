@@ -95,9 +95,9 @@ def all_min_covers(on, dc):
     return len(sols)
 
 W('%% id=libro3'); W('%% group=ejer'); W('%% n=3.3'); W('%% title=Libro de problemas · Capítulo 3 · Mapas de Karnaugh')
-W('%% short=Libro · Cap. 3 Karnaugh'); W('%% sub=Dos problemas, con 28 mapas para dibujar y 58 funciones para simplificar: con unos, con indiferentes y como producto de sumas.'); W()
+W('%% short=Libro · Cap. 3 Karnaugh'); W('%% sub=Dos problemas, con 28 mapas para dibujar y 60 funciones para simplificar: con unos, con indiferentes y como producto de sumas.'); W()
 W('@box idea | Cómo se usa esta sección')
-W('Son los problemas resueltos del capítulo 3 del libro *Problemas resueltos de electrónica digital* (ITES‑Paraninfo), reformulados con otras palabras. Cada simplificación se ha calculado con un minimizador y se ha comparado con la solución del libro: se comprueba que cubre todos los 1, que no cubre ningún 0 y que tiene el mismo coste que el mínimo. Los mapas de esta guía ponen $AB$ en las filas y $CD$ en las columnas. El libro pone $A,C$ en las columnas y $B,D$ en las filas: es el mismo mapa con los ejes cambiados (cada casilla lleva escrito su número de minitérmino). La teoría está en [[t04|el tema 4]].')
+W('Son los problemas resueltos del capítulo 3 del libro *Problemas resueltos de electrónica digital* (ITES‑Paraninfo), reformulados con otras palabras. Cada simplificación se ha calculado con un minimizador y se ha comparado con la solución del libro: se comprueba que cubre todos los 1, que no cubre ningún 0 y que tiene el mismo coste que el mínimo. Los mapas de esta guía ponen $AB$ en las filas y $CD$ en las columnas. El libro pone $A,C$ en las columnas y $B,D$ en las filas: es el mismo mapa con los ejes cambiados (cada casilla lleva escrito su número de minitérmino). La teoría está en [[t03|el tema 3]].')
 W('@end'); W()
 
 # ============================================================== P3.1
@@ -171,13 +171,14 @@ POS = {39: "(A'+B+D)(A'+C+D)(B'+C+D')(A+B+C'+D')", 40: '0', 41: "(A+B+D)(B'+C+D)
        42: "(A'+B+D)(A'+B'+C)(A'+B'+D')(B+C'+D')(A+B+C)", 43: "(B'+C)(A+B')(A'+B+D)(A'+C'+D')", 44: "(B+D)(B'+C')(A+B')(A'+D')",
        45: "(A+B+C)(A'+B+C')(A'+B'+C+D)(A+B'+C'+D)", 46: "(A+B+C)(A'+B'+C')(A+C'+D)(A'+B+D')", 47: "(A+C')(A+B)(B+C')(B'+C+D)(A'+B'+D')",
        48: 'ABCD', 49: "A + B' + C", 50: "B'D(A'+C)", 51: "(A+C+D)(A+B+C')", 52: '0', 53: "(B'+C)(C'+D)", 54: "(B+C+D)(A'+B'+C)(A+C'+D)",
-       55: "A'(B'+C'+D)", 56: "(B+D)(B'+C)(C'+D')", 57: "(A'+C)(A'+D)(B+D')", 58: "(B'+D)(A'+B')"}
+       55: "A'(B'+C'+D)", 56: "(B+D)(B'+C)(C'+D')", 57: "(A'+C)(A'+D)(B+D')", 58: "(B'+D)(A'+B')", 59: "A'", 60: '0'}
 MAPS_P = {39: [".00.", ".0..", "00..", "...0"], 40: ["0000"] * 4, 41: ["0..0", "00..", ".000", "...0"], 42: ["000.", ".0.0", ".00.", "0.00"],
           43: [".00.", "00.0", "0000", "..0."], 44: ["0000", "0.00", "0000", ".00."], 45: ["0.0.", ".0.0", "....", "0.0."], 46: ["0..0", "..00", "..0.", "000."],
           47: ["0.00", "00.0", ".000", "0.00"], 48: ["0000", "0000", "00.0", "0000"], 49: ["....", "0...", "0XXX", "...."],
           50: ["000X", "00X0", "000X", ".0.."], 51: ["0..0", "0XX.", "XXXX", "...0"], 52: ["00XX", "00XX", "0000", "0000"],
           53: ["..00", "0X00", "0X..", "...."], 54: ["00.0", ".0X0", ".0..", "...."], 55: [".XX.", ".X00", ".00.", ".00."],
-          56: ["X000", "X0X.", "00X0", "..X0"], 57: [".X0.", ".0X.", "X0..", "0000"], 58: [".XX.", "0000", ".00.", "...."]}
+          56: ["X000", "X0X.", "00X0", "..X0"], 57: [".X0.", ".0X.", "X0..", "0000"], 58: [".XX.", "0000", ".00.", "...."],
+          59: [".XX.", "X00X", "X00X", ".XX."], 60: ["00XX"] * 4}
 # funciones definidas a partir de la expresión del libro cuando no se ha podido leer el mapa
 SOP_SIN_MAPA = {10, 13, 15, 17, 19, 20, 21, 22}
 def eval_text_sop(s):
@@ -188,11 +189,11 @@ for i in range(1, 39):
         on, dc = from_map(MAPS_S[i], 'uno'); FUN[i] = dict(on=on, dc=dc, kind='S', book=SOP[i], src='mapa')
     else:
         on = sorted(eval_text_sop(SOP[i])); FUN[i] = dict(on=on, dc=[], kind='S', book=SOP[i], src='expresion')
-for i in range(39, 59):
+for i in range(39, 61):
     on, dc = from_map(MAPS_P[i], 'cero'); FUN[i] = dict(on=on, dc=dc, kind='P', book=POS[i], src='mapa')
 stats = []; allok = True; groupsok = {'a': True, 'b': True, 'c': True}
 def grp(i): return 'a' if i <= 22 else ('b' if i <= 38 else 'c')
-for i in range(1, 59):
+for i in range(1, 61):
     f = FUN[i]; on, dc = f['on'], f['dc']; key = 'lb3.p32.f%d' % i
     zeros = [m for m in range(16) if m not in on and m not in dc]
     # mínima propia
@@ -242,10 +243,10 @@ bkv42 = [ev_expr(f['book'], m) for m in range(16)]
 dif42 = [m for m in range(16) if (m in f['on'] and bkv42[m] != 1) or (m not in f['on'] and m not in f['dc'] and bkv42[m] != 0)]
 check('lb3.p32.f42.discrepancia_solo_en_6', dif42 == [6], str(dif42))
 f.update(valid=True, same_cost=None)
-allok = all(bool(FUN[i]['valid']) and (FUN[i]['same_cost'] in (True, None)) for i in range(1, 59))
+allok = all(bool(FUN[i]['valid']) and (FUN[i]['same_cost'] in (True, None)) for i in range(1, 61))
 check('lb3.p32', allok)
 # cuentas globales
-check('lb3.p32.numero', len(FUN) == 58)
+check('lb3.p32.numero', len(FUN) == 60)
 check('lb3.p32.f21_f34_f36_f37_constantes', all(FUN[i]['mine_tex'] == '1' for i in (21, 34, 36, 37)) and FUN[40]['mine_tex'] == '1' or True)
 
 
@@ -289,7 +290,7 @@ def pasos_rango(a, b, step=6):
     return ps
 check('lb3.p32a', all(FUN[i]['valid'] and FUN[i]['same_cost'] in (True, None) for i in range(1, 23)))
 check('lb3.p32b', all(FUN[i]['valid'] and FUN[i]['same_cost'] in (True, None) for i in range(23, 39)))
-check('lb3.p32c', all(FUN[i]['valid'] for i in range(39, 59)))
+check('lb3.p32c', all(FUN[i]['valid'] for i in range(39, 61)))
 ej('lb3-2', 'Simplificar 22 mapas de Karnaugh con unos', 'Libro · Cap. 3 · P3.2 (f1–f22)', 'comb,karnaugh', 'lb3.p32a',
    'Simplifica 22 funciones de cuatro variables dadas por su mapa de Karnaugh (sin indiferentes) y escribe la suma de productos mínima.',
    '**Método:** rodea todos los 1 con el menor número de lazos y del mayor tamaño posible (de 1, 2, 4, 8 o 16 casillas). Los lazos pueden solaparse y pueden dar la vuelta al mapa. Cada lazo da un producto con las variables que **no cambian** dentro de él.',
@@ -300,17 +301,17 @@ ej('lb3-3', 'Simplificar 16 mapas con combinaciones indiferentes', 'Libro · Cap
    '**Las indiferentes:** una × puede valer 0 o 1 según convenga. Se usa para hacer lazos más grandes o menos lazos, pero **nunca se forma un lazo solo con ×** (no haría falta).',
    pasos_rango(23, 38),
    'Las 16 soluciones del libro son válidas y mínimas. Casos curiosos: $f_{34}$ y $f_{37}$ valen 1 (todas las × y unos forman un único lazo de 16); $f_{36}$ solo tiene indiferentes y vale cualquier cosa (0, 1 o $AB+C$); $f_{38}=D$ usa las × de las filas con $D=1$.')
-ej('lb3-4', 'Simplificar 20 mapas como producto de sumas', 'Libro · Cap. 3 · P3.2 (f39–f58)', 'comb,karnaugh', 'lb3.p32c',
-   'Simplifica 20 funciones de cuatro variables, representadas por los **ceros** de su mapa, y escribe el producto de sumas mínimo.',
+ej('lb3-4', 'Simplificar 22 mapas como producto de sumas', 'Libro · Cap. 3 · P3.2 (f39–f60)', 'comb,karnaugh', 'lb3.p32c',
+   'Simplifica 22 funciones de cuatro variables, representadas por los **ceros** de su mapa, y escribe el producto de sumas mínimo.',
    '**Producto de sumas (POS):** rodea los 0 como si fueran unos, lee cada lazo como un producto y niega el resultado con De Morgan. Cada lazo se convierte en una **suma** en la que cada variable aparece **negada si vale 1** en el lazo y sin negar si vale 0.',
-   pasos_rango(39, 58),
-   'Las 20 soluciones del libro valen 0 en los 0 y 1 en los 1 del mapa. Funciones especiales: $f_{40}=0$ y $f_{52}=0$ (el mapa entero son ceros e indiferentes), $f_{48}=ABCD$ (un solo 1), $f_{49}=A+\\bar B+C$.\n\n@box ojo | Notas sobre $f_{42}$ y $f_{47}$\nEn $f_{42}$ el mapa tiene un 0 en $ABCD=0110$ que la solución impresa no cubre: o sobra ese 0 en el mapa o falta un factor. En $f_{47}$ la solución impresa es correcta pero tiene un literal de más.\n@end')
+   pasos_rango(39, 60),
+   'Las 22 soluciones del libro valen 0 en los 0 y 1 en los 1 del mapa. Funciones especiales: $f_{40}=f_{52}=f_{60}=0$ (el mapa entero son ceros e indiferentes), $f_{48}=ABCD$ (un solo 1), $f_{49}=A+\\bar B+C$ y $f_{59}=\\bar A$ (sin formar lazos de 8 ni de 4 con las indiferentes).\n\n@box ojo | Notas sobre $f_{42}$ y $f_{47}$\nEn $f_{42}$ el mapa tiene un 0 en $ABCD=0110$ que la solución impresa no cubre: o sobra ese 0 en el mapa o falta un factor. En $f_{47}$ la solución impresa es correcta pero tiene un literal de más.\n@end')
 
 # ============================================================== salida
 open(os.path.join(ROOT, 'src', 'libro3.dsl'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 bad = [c for c in CHK if not c['ok']]
 json.dump({'R': R, 'CHK': CHK}, open(os.path.join(ROOT, 'out', 'results9.json'), 'w'), ensure_ascii=False)
 print(len(CHK), 'checks;', len(bad), 'fallos;', len(DIFF), 'diferencias con el libro')
-for i in range(1, 59):
+for i in range(1, 61):
     f = FUN[i]
     if not f['valid'] or f['same_cost'] is False: print('  f%d valido=%s mismo_coste=%s mine=%s libro=%s' % (i, f['valid'], f['same_cost'], f['mine_tex'], f['book']))

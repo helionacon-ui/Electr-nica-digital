@@ -3,7 +3,7 @@
 %% n=3.3
 %% title=Libro de problemas · Capítulo 3 · Mapas de Karnaugh
 %% short=Libro · Cap. 3 Karnaugh
-%% sub=Dos problemas, con 28 mapas para dibujar y 58 funciones para simplificar: con unos, con indiferentes y como producto de sumas.
+%% sub=Dos problemas, con 28 mapas para dibujar y 60 funciones para simplificar: con unos, con indiferentes y como producto de sumas.
 
 @box idea | Cómo se usa esta sección
 Son los problemas resueltos del capítulo 3 del libro *Problemas resueltos de electrónica digital* (ITES‑Paraninfo), reformulados con otras palabras. Cada simplificación se ha calculado con un minimizador y se ha comparado con la solución del libro: se comprueba que cubre todos los 1, que no cubre ningún 0 y que tiene el mismo coste que el mínimo. Los mapas de esta guía ponen $AB$ en las filas y $CD$ en las columnas. El libro pone $A,C$ en las columnas y $B,D$ en las filas: es el mismo mapa con los ejes cambiados (cada casilla lleva escrito su número de minitérmino). La teoría está en [[t04|el tema 4]].
@@ -234,9 +234,9 @@ Las 16 soluciones del libro son válidas y mínimas. Casos curiosos: $f_{34}$ y 
 @end
 @end
 
-@ej lb3-4|Simplificar 20 mapas como producto de sumas|Libro · Cap. 3 · P3.2 (f39–f58)|comb,karnaugh|lb3.p32c
+@ej lb3-4|Simplificar 22 mapas como producto de sumas|Libro · Cap. 3 · P3.2 (f39–f60)|comb,karnaugh|lb3.p32c
 @enun
-Simplifica 20 funciones de cuatro variables, representadas por los **ceros** de su mapa, y escribe el producto de sumas mínimo.
+Simplifica 22 funciones de cuatro variables, representadas por los **ceros** de su mapa, y escribe el producto de sumas mínimo.
 @end
 @antes
 **Producto de sumas (POS):** rodea los 0 como si fueran unos, lee cada lazo como un producto y niega el resultado con De Morgan. Cada lazo se convierte en una **suma** en la que cada variable aparece **negada si vale 1** en el lazo y sin negar si vale 0.
@@ -298,15 +298,21 @@ Simplifica 20 funciones de cuatro variables, representadas por los **ceros** de 
 **$f_{56}$**: $f_{56}=(B + D)(\overline{C} + \overline{D})(\overline{B} + C)$ Hay 3 soluciones mínimas equivalentes.
 @fig kmap {"key": "lb3.p32.f56", "n": 4, "names": ["A", "B", "C", "D"], "title": "f56", "cap": "Mapa de $\\overline{f_{56}}$: los 1 son los ceros de $f_{56}$. Se rodean para leer el producto de sumas."}
 @end
-@paso Funciones 57 a 58
+@paso Funciones 57 a 60
 **$f_{57}$**: $f_{57}=(B + \overline{D})(C + \overline{D})(\overline{A} + D)$ Hay 3 soluciones mínimas equivalentes.
 @fig kmap {"key": "lb3.p32.f57", "n": 4, "names": ["A", "B", "C", "D"], "title": "f57", "cap": "Mapa de $\\overline{f_{57}}$: los 1 son los ceros de $f_{57}$. Se rodean para leer el producto de sumas."}
 
 **$f_{58}$**: $f_{58}=(\overline{B} + D)(\overline{A} + \overline{B})$
 @fig kmap {"key": "lb3.p32.f58", "n": 4, "names": ["A", "B", "C", "D"], "title": "f58", "cap": "Mapa de $\\overline{f_{58}}$: los 1 son los ceros de $f_{58}$. Se rodean para leer el producto de sumas."}
+
+**$f_{59}$**: $f_{59}=(\overline{B})$ Hay 2 soluciones mínimas equivalentes.
+@fig kmap {"key": "lb3.p32.f59", "n": 4, "names": ["A", "B", "C", "D"], "title": "f59", "cap": "Mapa de $\\overline{f_{59}}$: los 1 son los ceros de $f_{59}$. Se rodean para leer el producto de sumas."}
+
+**$f_{60}$**: $f_{60}=0$
+@fig kmap {"key": "lb3.p32.f60", "n": 4, "names": ["A", "B", "C", "D"], "title": "f60", "cap": "Mapa de $\\overline{f_{60}}$: los 1 son los ceros de $f_{60}$. Se rodean para leer el producto de sumas."}
 @end
 @res
-Las 20 soluciones del libro valen 0 en los 0 y 1 en los 1 del mapa. Funciones especiales: $f_{40}=0$ y $f_{52}=0$ (el mapa entero son ceros e indiferentes), $f_{48}=ABCD$ (un solo 1), $f_{49}=A+\bar B+C$.
+Las 22 soluciones del libro valen 0 en los 0 y 1 en los 1 del mapa. Funciones especiales: $f_{40}=f_{52}=f_{60}=0$ (el mapa entero son ceros e indiferentes), $f_{48}=ABCD$ (un solo 1), $f_{49}=A+\bar B+C$ y $f_{59}=\bar A$ (sin formar lazos de 8 ni de 4 con las indiferentes).
 
 @box ojo | Notas sobre $f_{42}$ y $f_{47}$
 En $f_{42}$ el mapa tiene un 0 en $ABCD=0110$ que la solución impresa no cubre: o sobra ese 0 en el mapa o falta un factor. En $f_{47}$ la solución impresa es correcta pero tiene un literal de más.
