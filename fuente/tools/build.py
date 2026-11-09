@@ -228,7 +228,7 @@ PAGES = [
  ('laboratorio', 'Prácticas y simulador', 'Prácticas', ['p1', 'p2', 'p3', 'p4', 'p567'], 'c7'),
  ('examenes', 'Exámenes resueltos paso a paso', 'Practicar', ['examenes'], 'c8'),
  ('hojas', 'Hojas de problemas resueltas', 'Practicar', ['hojas'], 'c8'),
- ('libro', 'Libro de problemas resueltos', 'Practicar', ['libro1', 'libro2', 'libro3', 'libro4', 'libro5', 'libro6'], 'c2'),
+ ('libro', 'Libro de problemas resueltos', 'Practicar', ['libro1', 'libro2', 'libro3', 'libro4', 'libro5', 'libro6', 'libro7', 'libro8'], 'c2'),
  ('demostraciones', 'Demostraciones', 'Practicar', ['demos'], 'c8'),
  ('autoevaluacion', 'Autoevaluación', 'Practicar', ['autoeval', 'libro_test'], 'c8'),
  ('simulacros', 'Simulacros con soluciones', 'Practicar', ['simulacros'], 'c8'),

@@ -3,7 +3,7 @@
 %% n=2
 %% title=Test del libro de problemas
 %% short=Test del libro de problemas
-%% sub=Preguntas tipo test sobre los capítulos 1 a 6 del libro de problemas (códigos, álgebra de Boole, Karnaugh, diseño combinacional, bloques MSI y biestables). Cada respuesta está comprobada con código.
+%% sub=Preguntas tipo test sobre los capítulos 1 a 8 del libro de problemas (códigos, álgebra de Boole, Karnaugh, diseño combinacional, bloques MSI, biestables, registros, contadores y autómatas). Cada respuesta está comprobada con código.
 
 Responde sin mirar la solución. Al elegir una opción se marca la correcta y se explica por qué. Cada bloque corresponde a un capítulo de la sección *Libro de problemas resueltos*; si fallas dos preguntas de uno, repasa sus problemas.
 
@@ -588,6 +588,381 @@ El D por flanco hecho con seis puertas NAND puede verse como:
 - Un maestro/esclavo de dos latches D
 - Un contador de 3 bits
 > Las puertas 1‑2 y 3‑4 forman dos latches de entrada que «capturan» D en el flanco, y las puertas 5‑6 forman el latch de salida. Después del flanco, los cambios de D ya no llegan a la salida.
+@end
+
+@end
+
+@details Capítulo 7 · Registros y contadores
+@q libro7
+Un registro de 4 bits con recirculación contiene $1011$ y se desplaza **un lugar a la izquierda** con recirculación. El nuevo contenido es:
++ $0111$
+- $0110$
+- $1101$
+- $0101$
+> Cada bit pasa a la posición de más peso y el que sale por la izquierda entra por la derecha: $1011\to0111$. Sin recirculación habría entrado un 0 ($0110$). $1101$ es el desplazamiento a la derecha con recirculación ($1011\to1101$).
+@end
+
+@q libro7
+Un contador de Johnson de $n$ biestables (el último, negado, realimenta al primero) tiene módulo:
++ $2n$
+- $n$
+- $2^n$
+- $2^n-1$
+> Primero entran $n$ unos y luego $n$ ceros: $2n$ estados (6 con 3 bits, 8 con 4). Es la ventaja de que cambie un solo bit por flanco, aunque se aproveche una parte pequeña de los $2^n$ estados.
+@end
+
+@q libro7
+En el contador de Johnson de 3 bits, el estado $010$ (que no pertenece a la secuencia útil) evoluciona hacia:
++ Otro ciclo aparte: $010\to101\to010$
+- La secuencia útil: $011$
+- $000$
+- Se queda en $010$
+> Con $D_0=\overline{Q_2}$, $D_1=Q_0$, $D_2=Q_1$, el estado 010 va a 101 y el 101 vuelve a 010: es un ciclo no deseado. Hay que inicializar el contador para empezar en la secuencia buena.
+@end
+
+@q libro7
+En un contador asíncrono con J‑K ($J=K=1$) donde cada $Q$ es el reloj del siguiente biestable, el sentido de la cuenta depende de:
++ El flanco activo: bajada → ascendente, subida → descendente
+- El valor de $J$ y $K$
+- La frecuencia del reloj
+- Siempre es ascendente
+> Con flancos de bajada, el siguiente biestable cambia cuando el anterior pasa de 1 a 0, como el acarreo de una suma (0,1,2,3…). Con flancos de subida cambia cuando el anterior pasa de 0 a 1, es decir, cuando «pide prestado»: 7, 6, 5… (comprobado por simulación).
+@end
+
+@q libro7
+Dos biestables D: el primero tiene $D=\overline{Q_0}$ y flanco de subida de $Ck$; el segundo tiene $D=Q_0$ y flanco de **bajada** de $Ck$. La secuencia $Q_1Q_0$ (un estado por medio periodo) es:
++ 00, 01, 11, 10, 00…
+- 00, 01, 10, 11, 00…
+- 00, 11, 10, 01, 00…
+- 00, 10, 11, 01, 00…
+> Q0 cambia en las subidas y Q1 copia a Q0 en las bajadas: 00 → (subida) 01 → (bajada) 11 → (subida) 10 → (bajada) 00. Es el código Gray de 2 bits; el circuito mezcla flancos distintos del mismo reloj.
+@end
+
+@q libro7
+En el contador BCD síncrono con J‑K ($J_3=Q_2Q_1Q_0$, $K_3=Q_0$, $J_2=K_2=Q_1Q_0$, $J_1=\overline{Q_3}Q_0$, $K_1=Q_0$, $J_0=K_0=1$), si arranca por error en $1110$ (14):
++ Pasa a $1111$ y después a $0000$: se autocorrige
+- Se queda en $1110$
+- Pasa a $0000$ directamente
+- Pasa a $1001$
+> El J‑K simplificado usa las indiferencias de los estados no BCD, pero la simulación de las ecuaciones muestra que 10→11→4, 12→13→4 y 14→15→0: el contador siempre vuelve a la secuencia en como mucho dos flancos.
+@end
+
+@q libro7
+En el contador síncrono en código Gray de módulo 16 con J‑K, la entrada $K_0$ (el bit menos significativo baja de 1 a 0) vale 1 cuando $Q_0=1$ y además:
++ $Q_3\oplus Q_2\oplus Q_1=1$ (paridad impar)
+- $Q_3=1$
+- $Q_2\cdot Q_1=1$
+- $Q_3\oplus Q_2=0$
+> Se comprueba con las 16 transiciones: el bit $Q_0$ cambia según la paridad de los otros tres bits. $K_0=Q_3\oplus Q_2\oplus Q_1$ y $J_0=\overline{K_0}$ (observación propia, que simplifica los cuatro términos).
+@end
+
+@q libro7
+En el módulo 60 con dos 74160, si la NAND que carga 0 en las decenas **solo** mira «decenas = 5» (olvida el RCO de las unidades), la cuenta hace:
++ $\dots,49,50,01,02,\dots$ (de 50 salta a 01 y nunca llega a 59)
+- $\dots,58,59,00,\dots$ como debe
+- $\dots,59,60,00,\dots$
+- Se bloquea en 50
+> Al llegar a 50 la NAND ya está activa y el siguiente flanco carga 0 en las decenas mientras las unidades siguen contando (50 → 01), antes de que lleguen a 9. Con el RCO se espera a 59 (decenas 5 y unidades 9).
+@end
+
+@q libro7
+En un contador módulo 1000 con tres 74160, las **centenas** cuentan cuando:
++ Las unidades y las decenas valen 9 a la vez (RCO·RCO)
+- Solo las unidades valen 9
+- Siempre
+- Solo las decenas valen 9
+> Para pasar de 099 a 100 deben desbordarse unidades **y** decenas. Con solo el RCO de las decenas, 090 → 100 saltaría (decenas = 9 sin que las unidades lo estén).
+@end
+
+@q libro7
+Un 74163 (binario, 4 bits) forma un contador módulo 12 con una NAND que lleva a LOAD (datos $=0000$) la decodificación de:
++ $1011$ (11): $Q_3\cdot Q_1\cdot Q_0$
+- $1100$ (12): $Q_3\cdot Q_2$
+- $1010$ (10)
+- $1111$ (15)
+> La carga es **síncrona**: se detecta el último estado deseado (11) y en el siguiente flanco se carga 0. Si se detectase el 12, el contador pasaría por 12 un ciclo.
+@end
+
+@q libro7
+Para obtener un pulso de 1 s a partir de un reloj de 1 kHz con 74160 en cascada hacen falta:
++ Tres contadores BCD (módulo 1000)
+- Dos contadores BCD (módulo 100)
+- Un 74163 (módulo 16)
+- Cuatro contadores BCD (módulo 10 000)
+> $1\ kHz/1000=1\ Hz$. Tres contadores de módulo 10 dan 1000. La señal de fin de cuenta es $RCO\cdot RCO\cdot RCO$.
+@end
+
+@q libro7
+Un registro de desplazamiento de 4 bits con una AND detecta la secuencia 1011 en los últimos cuatro flancos. Si la entrada es $1,0,1,1,0,1,1$, la puerta se abre:
++ 2 veces (las dos ventanas de 4 bits solapadas)
+- 1 vez
+- 3 veces
+- Ninguna
+> Las ventanas $1011$ de los flancos 1‑4 y 4‑7 comparten un bit. Con una AND en $Q_3\overline{Q_2}Q_1Q_0$ el solapamiento se detecta de forma natural.
+@end
+
+@q libro7
+Para separar bloques de tres bits se usa un 74160 con $D=0001$, y una AND de $Q_1$ y $Q_0$ que activa LOAD y habilita la salida. La secuencia de valores del contador es:
++ $1,2,3,1,2,3,\dots$ (tras INICIO empieza en 0, pero también sirve)
+- $0,1,2,0,1,2,\dots$
+- $0,1,2,3,0,1,2,3,\dots$
+- $3,2,1,3,2,1,\dots$
+> Cargar 1 hace que el periodo sea 3 flancos (de 1 a 3 y la carga). Tras INICIO el contador vale 0 y tarda también tres flancos en llegar a 3, así que la primera ventana sale bien.
+@end
+
+@q libro7
+Para multiplexar cuatro displays con un reloj de 200 Hz (un display por flanco), la frecuencia de refresco de **cada** display es:
++ 50 Hz
+- 200 Hz
+- 800 Hz
+- 25 Hz
+> Cada display se enciende una de cada cuatro veces: $200/4=50$ Hz, dentro del margen recomendable de 50‑100 Hz.
+@end
+
+@q libro7
+En el divisor con registro desplazable, $1101$ (13) dividido entre 4 se obtiene con:
++ Dos desplazamientos hacia el bit de menor peso: $0011$ (3)
+- Dos desplazamientos hacia el de mayor peso: $0100$
+- Cuatro desplazamientos
+- Un desplazamiento: $0110$
+> Dividir entre $2^k$ es desplazar $k$ lugares hacia el bit menos significativo: $1101\to0110\to0011$. El cociente es $\lfloor13/4\rfloor=3$; el resto sale por el extremo.
+@end
+
+@q libro7
+Una rueda con 4 marcas ópticas, medida con un 74163 de 4 bits durante 1 s, alcanza como máximo una velocidad medible de:
++ 4 vueltas por segundo (16 pulsos)
+- 3 vueltas por segundo (12 pulsos)
+- 16 vueltas por segundo
+- 8 vueltas por segundo
+> El 74163 es de módulo 16: a partir de 16 pulsos la cuenta da la vuelta y la medida deja de ser fiable. 16 pulsos con 4 marcas por vuelta son 4 vueltas por segundo. Para más hay que ampliar el módulo con más contadores.
+@end
+
+@q libro7
+En el marcador de tenis, un juego termina cuando:
++ El mayor de los dos tiene al menos 4 puntos y la diferencia es al menos 2
+- Alguno llega a 4 puntos
+- La diferencia es 2 o más
+- El mayor tiene exactamente 4 puntos
+> Se implementa con dos comparadores: $MD$ (mayor $>3$) y $MR$ (diferencia $>1$), y $JUEGO=MD\cdot MR$. Con 4‑3 o 5‑4 el juego sigue (ventaja); con 4‑2 o 6‑4 termina.
+@end
+
+@q libro7
+En un contador asíncrono de 0 a 5 con J‑K y puesta a cero asíncrona, la NAND de borrado decodifica:
++ $110$ (6), el primer estado no deseado
+- $101$ (5), el último deseado
+- $111$ (7)
+- $000$
+> Se deja contar hasta el primer valor que no se quiere (6). El contador llega a tomarlo durante un breve instante (glitch) hasta que el CLEAR actúa. Como el 7 nunca se alcanza, $Q_2\cdot Q_1$ ya basta.
+@end
+
+@q libro7
+En el contador BCD asíncrono, la condición mínima ($Q_3\cdot Q_1$) detecta el primer estado no BCD, que es:
++ $1010$ (10)
+- $1000$ (8)
+- $1100$ (12)
+- $0110$ (6)
+> De 0 a 9 solo el 10 es el primer estado con $Q_3=1$ y $Q_1=1$ a la vez (el 11 y siguientes nunca se alcanzan). Es un recorte a módulo 10 con un instante en 10 (glitch).
+@end
+
+@q libro7
+Tres J‑K ($J=K=1$) con flanco de subida y cada $Q$ como reloj del siguiente, con una NAND de $\overline{Q_2}Q_1\overline{Q_0}$ a los PRESET, generan la secuencia:
++ $7,6,5,4,3,7,\dots$ (descendente, módulo 5)
+- $0,1,2,3,4,0,\dots$
+- $7,6,5,4,3,2,1,0$
+- $2,3,4,5,6,7,2,\dots$
+> La cadena de flancos de subida cuenta hacia abajo. Se decodifica el 2 (primer valor no deseado) y se fuerza 111 = 7: quedan los cinco estados 7‑6‑5‑4‑3.
+@end
+
+@end
+
+@details Capítulo 8 · Autómatas finitos (Moore y Mealy)
+@q libro8
+En un autómata de **Mealy** la salida depende de:
++ El estado y de las entradas actuales
+- Sólo del estado
+- Sólo de las entradas anteriores
+- Del estado siguiente, no del actual
+> En el Mealy la salida se asocia a la **transición**: se calcula con el estado y la entrada presentes, y puede cambiar sin que cambie el estado. En el Moore depende sólo del estado y cambia sólo con el reloj.
+@end
+
+@q libro8
+El detector de la secuencia 1011 con solapamiento necesita 4 estados como autómata de Mealy. Como autómata de **Moore** necesita:
++ 5 estados
+- 4 estados
+- 6 estados
+- 3 estados
+> En el Moore la salida «he detectado» debe ser propia de un estado. El estado que sigue a un 1 se alcanza unas veces con salida 0 y otras (tras 1011) con salida 1, así que se **duplica**: $4+1=5$. El algoritmo de equivalencia confirma que no hay más fusiones.
+@end
+
+@q libro8
+Un detector de «tres unos seguidos» (Mealy, **con solapamiento**) recibe la entrada $1\,1\,1\,1\,0\,1\,1\,1$. Su salida es:
++ $0\,0\,1\,1\,0\,0\,0\,1$
+- $0\,0\,1\,0\,0\,0\,0\,1$
+- $0\,0\,1\,1\,0\,0\,1\,1$
+- $0\,0\,0\,1\,0\,0\,0\,1$
+> Con solapamiento, el cuarto 1 también cierra una racha de tres (los tres últimos son 111). La salida es 1 en los pasos 3, 4 y 8. Sin solapamiento (reiniciar tras detectar) la salida del paso 4 sería 0.
+@end
+
+@q libro8
+En la tabla de excitación del J‑K, para pasar de $Q=1$ a $Q^+=0$ lo **imprescindible** es:
++ $K=1$ y $J$ indiferente
+- $J=1$ y $K$ indiferente
+- $J=0$ y $K=0$
+- $K=0$ y $J$ indiferente
+> $J=0,K=1$ pone a 0 y $J=1,K=1$ conmuta (1→0): ambos valen. Por eso $J$ es indiferente y $K=1$ es obligatorio. $J=K=0$ mantiene, $K=0$ no puede bajar la salida.
+@end
+
+@q libro8
+En el sumador serie de Mealy (bits menos significativos primero) con un J‑K para el acarreo, $J_0=E_1E_0$. La entrada $K_0$ es:
++ $\overline{E_1}\,\overline{E_0}$
+- $E_1E_0$
+- $E_1\oplus E_0$
+- $E_1+E_0$
+> El acarreo sólo debe borrarse cuando **no puede generarse más**: con $E_1=E_0=0$ ($\overline{E_1}\,\overline{E_0}$). Con $E_1\oplus E_0=1$ el acarreo pendiente se mantiene (ni $J$ ni $K$), y con 11 se pone o se mantiene a 1 (comprobado en las ocho transiciones).
+@end
+
+@q libro8
+El sumador serie de Mealy tiene 2 estados (acarreo 0 y 1). La versión de **Moore** necesita:
++ 4 estados (acarreo y último bit de suma)
+- 2 estados, igual
+- 3 estados
+- 8 estados
+> La salida $S$ debe estar en el estado, que ha de recordar también la suma calculada: 2 acarreos × 2 valores de $S$ = 4 estados, no fusionables porque tienen salidas distintas. Cuesta dos biestables en lugar de uno y la suma sale un ciclo más tarde.
+@end
+
+@q libro8
+Un contador de Moore módulo 4 reversible (con $E_0$ = sentido), que al cambiar de sentido **empieza por el primer valor de la nueva secuencia**, necesita como mínimo:
++ 8 estados
+- 4 estados
+- 5 estados
+- 6 estados
+> Una misma salida (por ejemplo 2) lleva a salidas distintas según se estuviera subiendo o bajando, así que cada valor tiene dos estados: $A_0\dots A_3$ y $D_3\dots D_0$. El algoritmo de equivalencia no fusiona ninguno.
+@end
+
+@q libro8
+En el contador módulo 8 con habilitación $E_0$ y J‑K (con $J=K$ en cada biestable), el bit $q_2$ debe conmutar cuando:
++ $E_0\,q_1\,q_0=1$ (habilitado y acarreo de los dos bits bajos)
+- $q_1q_0=1$, sin mirar la habilitación
+- $E_0\,q_2=1$
+- $E_0(q_1+q_0)=1$
+> $q_2$ cambia cuando el incremento acarrea desde $q_1q_0=11$ y el contador está habilitado: $J_2=K_2=E_0q_1q_0$. Sin $E_0$ contaría siempre; con una OR contaría de más (ya desde 001).
+@end
+
+@q libro8
+El autómata de Mealy que da el bit de paridad de un mensaje de 3 bits tiene en su primer diseño (árbol) 7 estados. Al reducirlo quedan:
++ 5 estados
+- 3 estados
+- 4 estados
+- 6 estados
+> Se fusionan los dos estados «los dos primeros bits tienen paridad par» (00 y 11) y los dos de paridad impar (01 y 10): $7-2=5$. Para la paridad sólo importa **cuántos unos**, no cuáles bits fueron.
+@end
+
+@q libro8
+El codificador de prioridad 4:2 serie, recibiendo primero el bit **menos** significativo, necesita 7 estados. Recibiendo primero el **más** significativo necesita:
++ 10 estados (más, no menos)
+- 4 estados
+- 7 estados
+- 5 estados
+> Con el más significativo primero hay que decidir ya, pero luego se deben dejar pasar los bits restantes: se forman cadenas de estados «de relleno» (X) y el total sube a 10; el algoritmo de equivalencia no puede fusionarlos.
+@end
+
+@q libro8
+Un comparador serie de Moore recibe primero el bit **menos** significativo. Con $A=0110$ (6) y $B=0101$ (5), tras los cuatro ciclos el estado es:
++ MAYOR
+- MENOR
+- IGUAL
+- No se puede saber
+> Los pares $E_1E_0$ en orden son 01, 10, 11, 00. Manda siempre **el último bit que difiere**: el primero da MENOR, el segundo MAYOR, y los dos siguientes (11 y 00) no cambian nada: MAYOR.
+@end
+
+@q libro8
+En el comparador serie que recibe primero el bit **más** significativo, con $A=1010$ (10) y $B=1001$ (9), el estado tras el cuarto bit es:
++ MAYOR (el primer bit que difiere decide para siempre)
+- MENOR (el último bit decide)
+- IGUAL
+- Depende del biestable
+> Los pares son 11, 00, 10, 01. Con el más significativo primero, el primer par que difiere (10) fija MAYOR, y MAYOR/MENOR son estados **absorbentes**: el 01 final no lo cambia. Con el orden inverso sí mandaría el último.
+@end
+
+@q libro8
+En los autómatas «industriales», las entradas (pulsadores, sensores) son asíncronas. Antes de llegar al autómata se las:
++ Sincroniza con biestables D que usan el reloj del autómata
+- Retrasa con puertas lógicas
+- Cuenta con un contador
+- Codifica con un decodificador
+> Un biestable D por flanco muestrea la entrada en el flanco de reloj y entrega una señal sincronizada. El autómata sólo «mira» las entradas en cada flanco; con un reloj rápido es casi como si fuera continuo.
+@end
+
+@q libro8
+En el autómata de la puerta (entradas $PAC$: pulsador, sensor de abierta, sensor de cerrada), las combinaciones 011 y 111 se tratan como imposibles porque:
++ La puerta no puede estar abierta y cerrada a la vez ($A=C=1$)
+- El pulsador no puede estar activo con un sensor
+- Producirían un estado sin codificar
+- Dos biestables no admiten esas combinaciones
+> Esas dos filas tienen $A=C=1$. Quedan seis entradas posibles por estado, y las combinaciones imposibles se usan como **indiferentes** al minimizar.
+@end
+
+@q libro8
+En el limpiaparabrisas con detector de reposo $R$ (entradas $MPR$), con $001$ la escobilla en MARCHA sigue y en MAPA se detiene. Eso demuestra que:
++ Hacen falta tres estados: la misma entrada exige respuestas distintas según el pasado
+- Dos estados bastan si se añade una salida
+- La entrada 001 es imposible
+- El detector $R$ sobra
+> MARCHA y MAPA tienen la misma salida (motor encendido) pero **no son equivalentes**: ante 001 uno sigue y el otro pasa a PARO. Esa diferencia de comportamiento es lo que obliga a distinguirlos con un estado propio.
+@end
+
+@q libro8
+Un motor que se pone en marcha o se para **al soltar** su pulsador (activación en el paso de 1 a 0) necesita, como mínimo:
++ 4 estados (parado, pulsado‑esperando, en marcha, pulsado‑esperando)
+- 2 estados
+- 3 estados
+- 8 estados
+> Hay que distinguir «he pulsado y aún no he soltado» de «ya ha actuado». Con dos estados, mientras el pulsador siguiera a 1 el motor conmutaría en cada ciclo de reloj. Los dos estados de espera evitan esa oscilación.
+@end
+
+@q libro8
+Un detector de flanco de **subida** síncrono (salida de un ciclo de reloj) necesita 3 estados (INICIO, PULSO y FINAL). El que genera un pulso en **los dos flancos** necesita:
++ 4 estados
+- 3 estados, igual
+- 2 estados
+- 6 estados
+> Hay que recordar además que la entrada se mantiene a 1 antes de poder detectar la bajada: INICIO, PULS1, MANT y PULS0. Los dos estados de pulso son los que tienen salida 1.
+@end
+
+@q libro8
+El sensor de peso da 5, 5, 5, 6, 5, 5, 5, 5 en pulsos de reloj consecutivos. La alarma (peso 5 durante al menos 4 pulsos **seguidos**) se activa:
++ En el octavo pulso
+- En el cuarto pulso
+- En el séptimo pulso
+- Nunca
+> El 6 interrumpe la cuenta de cincos (se parte de 1 en el quinto pulso) y los cuatro últimos son cincos seguidos: sólo el octavo pulso cierra una racha de cuatro. Es un autómata con estados P51…P54.
+@end
+
+@q libro8
+En la caja fuerte de combinación 1‑1‑0, el usuario pulsa $P_1$, suelta, y a continuación pulsa $P_0$. El autómata:
++ Pasa a ALARM en cuanto se pulsa $P_0$
+- Espera al tercer dígito antes de dar la alarma
+- Vuelve al estado inicial
+- Abre la caja
+> Tras un 1 correcto se espera otro 1: el estado $S_1$ con la entrada 01 (pulsar $P_0$) va directamente a ALARM, que es absorbente. Se sale de ahí sólo con el RESET.
+@end
+
+@q libro8
+El transmisor serie envía, tras soltar el pulsador, una trama con arranque 0, el bit $E_1$, el bit $E_0$ y un 0 final, con la línea en reposo a 1. Con $E_1E_0=10$ la salida tras soltar $P$ es:
++ $0,1,0,0$ y luego 1 (reposo)
+- $1,0,1,0$
+- $0,0,1,0$
+- $0,1,0,1$
+> El arranque es 0, después $E_1=1$, $E_0=0$ y un 0 final; a continuación la línea vuelve a 1. Cada uno de esos símbolos es un estado de Moore (EMPIE, UNO1, DOS0, FINAL).
+@end
+
+@q libro8
+En el autómata de calificaciones (tres bits por examen, 10 estados), INICIO y SUSP3 se pueden fusionar porque:
++ Tienen la misma salida y los mismos estados siguientes ante 0 y ante 1
+- Los dos están antes de EMPIE
+- Tienen el mismo nombre de estado
+- Ambos son estados con salida 1
+> Dos estados son equivalentes si dan las mismas salidas y, para cada entrada, llevan a estados equivalentes: INICIO y SUSP3 hacen 000 y van a SUSP1 con 0 y a EMPIE con 1. Quedan **9 estados**.
 @end
 
 @end
