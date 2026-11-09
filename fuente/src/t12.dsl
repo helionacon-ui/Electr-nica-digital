@@ -17,6 +17,12 @@ Un circuito digital normal tiene su función **fija** al fabricarlo. Un **dispos
 - **Bloques de E/S:** adaptan los pines a distintos niveles de tensión.
 - **Bloques extra:** RAM en bloque, multiplicadores, gestores de reloj.
 
+@fig fpga {"cap": "Estructura de una FPGA: una malla de bloques lógicos unida por conexiones programables."}
+
+@fig lut {"cap": "Un bloque lógico: una LUT de 4 entradas seguida, opcionalmente, de un biestable."}
+
+@sim lut
+
 Una función de **más de 4 variables** se reparte entre varias LUT conectadas.
 
 ## ¿Por qué FPGA y no un microcontrolador?

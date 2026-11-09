@@ -13,6 +13,8 @@ Un **registro** es un grupo de biestables D que guardan una palabra. Un **regist
 
 Cada biestable toma como entrada la salida del anterior: $D_i=Q_{i-1}$. En cada flanco, todo se mueve una posición y entra un bit nuevo por un extremo.
 
+@fig shreg {"kind": "shift", "n": 4, "cap": "Registro de desplazamiento de 4 bits: la entrada serie avanza una etapa por cada flanco."}
+
 Si metes en serie los bits $1,0,1,1$ en un registro de 4 bits, tras 4 flancos tiene $1011$ en paralelo. Se ha comprobado por código.
 
 @fig timing {"signals":[["CLK",null],["Din",[1,0,1,1,0,0,0,0]],["Q0",[0,1,0,1,1,0,0,0]],["Q1",[0,0,1,0,1,1,0,0]],["Q2",[0,0,0,1,0,1,1,0]]],"title":"Registro de desplazamiento de 3 bits: el dato avanza una posición por flanco","slots":8,"cap":"Cada bit tarda un ciclo en pasar de una etapa a la siguiente."}
@@ -54,6 +56,10 @@ Anillo: 4 estados. Johnson: 8 estados ($2n$).
 ## LFSR: registro con realimentación lineal
 
 Si se realimenta la entrada con un **XOR** de algunas salidas, el registro recorre una secuencia pseudoaleatoria. Con 4 bits y realimentación $Q_3\oplus Q_2$ se recorren los **15** estados no nulos antes de repetir (periodo $2^4-1$). Se usa en comunicaciones, cifrado sencillo y generadores de pruebas. El estado todo ceros es un **atasco**: nunca sale de él.
+
+@fig shreg {"kind": "lfsr", "n": 4, "cap": "LFSR de 4 bits: la realimentación es el XOR de las dos últimas salidas."}
+
+@sim shreg
 
 @box falla | Qué suele fallar
 - Dirección del desplazamiento: dibuja siempre qué bit entra y cuál sale.

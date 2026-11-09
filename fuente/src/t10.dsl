@@ -39,6 +39,8 @@ Un **autómata** (máquina de estados finitos) es un circuito que **recuerda en 
 
 Una entrada serie $X$ y una salida $Z$. Debe dar $Z=1$ cuando los **tres últimos** bits recibidos sean $1,0,1$ (las secuencias pueden solaparse: $10101$ contiene dos).
 
+@sim fsmdet
+
 @fig fsm {"nodes":{"S0":[70,100,"sin avance"],"S1":[240,100,"visto 1"],"S2":[410,100,"visto 10"]},"edges":[["S0","S0","0/0",0],["S0","S1","1/0",-30],["S1","S1","1/0",0],["S1","S2","0/0",-30],["S2","S0","0/0",-90],["S2","S1","1/1",30]],"W":520,"H":200,"title":"Detector 101 (Mealy): etiqueta entrada/salida","cap":"Tres estados. En S2 (hemos visto 10), un 1 completa la secuencia (Z=1) y además sirve como primer 1 de la siguiente."}
 
 @ej t10-e1|Detector de la secuencia 101 con biestables D|Ejemplo T10|sec|t10.det101,t10.det_gates,t10.ej_out

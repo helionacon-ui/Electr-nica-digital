@@ -201,3 +201,5 @@ a.tile{border-left:5px solid var(--accent)}
 .codeblock pre.code{margin:0;border-radius:0 0 9px 9px;overflow-x:auto}
 
 .dmrow{display:flex;flex-wrap:wrap;justify-content:center;column-gap:2.2em;row-gap:0}.dmrow .dmath{margin:.35em 0;max-width:100%}
+.sim .lamp{display:inline-block;min-width:44px;text-align:center;padding:5px 10px;border-radius:8px;border:1px solid var(--line);font:.85rem ui-monospace,monospace;margin:2px 4px 2px 0;color:var(--ink2);background:var(--bg)}
+.sim .lamp.on{background:var(--ok-soft);color:var(--ok);border-color:var(--ok);font-weight:700}

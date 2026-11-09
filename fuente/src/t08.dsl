@@ -13,12 +13,16 @@ Un **contador** es un circuito secuencial cuyo estado **avanza una cuenta** con 
 
 Es una cadena de biestables T (o JK con $J=K=1$) donde la salida de cada uno es el **reloj del siguiente**. Solo el primero recibe el reloj externo. Cada etapa divide la frecuencia por 2.
 
+@fig contador {"kind": "async", "n": 3, "cap": "Contador asíncrono de 3 bits: cada biestable se dispara con la salida del anterior."}
+
 - Ventaja: muy simple.
 - Inconveniente: los cambios **se propagan en cadena** (de ahí *ripple*). Un contador de 4 bits con $t_{pd}=12$ ns por etapa tarda $4\cdot12=48$ ns en estabilizarse, así que el reloj máximo es unos $1/48\text{ ns}\approx20{,}8$ MHz, y mientras se propaga hay valores intermedios erróneos (*glitches*).
 
 ## Contador síncrono
 
 **Todos los biestables comparten el mismo reloj.** El biestable $i$ debe conmutar cuando **todos los bits menores valen 1**:
+
+@fig contador {"kind": "sync", "n": 3, "cap": "Contador síncrono de 3 bits: todos comparten el reloj y cada T es el producto de las salidas de menor peso."}
 
 $$T_i=Q_{i-1}\cdot Q_{i-2}\cdots Q_0$$
 

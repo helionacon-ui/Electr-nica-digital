@@ -50,6 +50,8 @@ $0{,}1_{10}$ en binario es periódico, igual que $1/3$ en decimal. Por eso un ci
 
 Con $n$ bits hay $2^n$ combinaciones. Para repartirlas entre positivos y negativos se usa el **complemento a dos (C2)**. El bit más significativo (MSB) es el **signo**: 0 positivo, 1 negativo.
 
+@fig rueda_c2 {"n": 4, "cap": "La rueda del complemento a 2 con 4 bits: tras el 7 viene el −8. Sumar es girar en el sentido de las agujas del reloj."}
+
 **Rango con $n$ bits:**
 
 $$-2^{\,n-1}\;\le\; N\;\le\; 2^{\,n-1}-1$$
@@ -87,6 +89,9 @@ $100=01100100$, $50=00110010$. Suma: $10010110$. El MSB vale 1, así que se lee 
 - Un positivo más un negativo **nunca** desborda.
 @end
 
+@sim ovf
+
+
 @sim bcdadd
 
 ## BCD: decimal en cuatro bits
@@ -119,6 +124,8 @@ $1000\;0011_{BCD}=83$. Comprobación: $38+45=83$.
 ## Código Gray y detección de errores
 
 **Gray:** una secuencia de códigos donde de uno al siguiente **cambia un solo bit**. Para 3 bits: $000,001,011,010,110,111,101,100$. Se usa en codificadores de posición: si dos bits cambiaran a la vez y uno llegara antes, leerías una posición falsa. Con Gray el error máximo es una posición.
+
+@fig gray {"n": 3, "cap": "En el código Gray de 3 bits, dos vecinos cualesquiera de la rueda se diferencian en un solo bit (también el último con el primero)."}
 
 **Paso de binario a Gray:** $g_i=b_i\oplus b_{i+1}$ (el MSB se copia). Es decir, $g=b\oplus(b\gg1)$.
 

@@ -14,6 +14,8 @@ Se permite usar IA como apoyo, pero el código debe ser **comprendido, revisado 
 
 Construir un sistema completo combinando bloques: el ejemplo de la guía muestra cuatro cifras en el display multiplexado de la Basys.
 
+@fig blocks {"blocks": {"cnt": [20, 80, 120, 70, "Contador\nde 18 bits"], "mux": [190, 20, 120, 70, "MUX 4:1\ncifras BCD"], "d7": [350, 20, 120, 70, "Decodificador\n7 segmentos"], "an": [190, 140, 120, 60, "Decodificador\n2→4 (ánodos)"]}, "arrows": [[140, 100, 190, 55, "sel"], [140, 130, 190, 170, "sel"], [310, 55, 350, 55, "cifra"], [470, 55, 570, 55, "segmentos"], [310, 170, 430, 170, "ánodos"]], "W": 580, "H": 215, "title": "Display de 4 dígitos multiplexado", "cap": "El contador de refresco elige a la vez la cifra y el dígito que se enciende."}
+
 @ej p4-s1|Display de 4 dígitos multiplexado|Práctica 4|vhdl,msi|t12.refresco,t12.disp
 @enun
 Muestra cuatro cifras BCD en el display de 4 dígitos de la Basys. Calcula la frecuencia de refresco.

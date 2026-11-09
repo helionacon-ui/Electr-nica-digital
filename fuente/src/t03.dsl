@@ -22,6 +22,8 @@ Una **función lógica** es una regla que dice, para cada combinación de entrad
 
 @fig gates {"cap":"Símbolos de las puertas básicas. El círculo a la salida significa «negado»."}
 
+@sim truth
+
 **Las puertas NAND y NOR son universales:** con solo una de ellas puedes construir cualquier circuito. Se ha comprobado por código que con NAND se obtienen NOT, AND y OR.
 
 ## Reglas que debes saber de memoria

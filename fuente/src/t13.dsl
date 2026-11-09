@@ -14,6 +14,8 @@
 - **`entity`** (entidad): la **caja negra**. Dice el nombre y los puertos (entradas y salidas).
 - **`architecture`** (arquitectura): lo que hay **dentro** de la caja.
 
+@fig entidad {"name": "sum4", "entradas": ["a[3:0]", "b[3:0]", "cin"], "salidas": ["s[3:0]", "cout"], "cap": "La entidad es la caja negra: solo se ven los puertos."}
+
 @code vhdl|Plantilla mínima
 library ieee;
 use ieee.std_logic_1164.all;

@@ -22,6 +22,8 @@ Una **memoria** es una tabla: das una **dirección** y te devuelve el **dato** g
 
 $$\text{bits totales}=2^{k}\cdot m\qquad k=\log_2(\text{posiciones})$$
 
+@fig memoria {"n": 3, "m": 4, "cap": "Memoria de 8 palabras de 4 bits: el decodificador activa una fila y la matriz entrega los 4 bits de esa palabra."}
+
 - Una memoria de $8$K$\times8$ necesita $k=13$ líneas de dirección ($2^{13}=8192$).
 - Una de $64$K$\times16$ guarda $64\cdot1024\cdot16=1\,048\,576$ bits.
 
@@ -53,6 +55,9 @@ $4\times2=8$ chips.
 **8 chips** y **13** líneas de dirección.
 @end
 @end
+
+@sim mem
+
 
 ## La memoria como circuito combinacional
 

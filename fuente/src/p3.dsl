@@ -10,6 +10,12 @@
 
 Diseñar sistemas sincronizados con reloj: contadores, registros y divisores de frecuencia, máquinas de estados y tratamiento del rebote de los pulsadores ([[t08|T8]], [[t09|T9]], [[t10|T10]]).
 
+@fig contador {"kind": "sync", "n": 3, "cap": "Contador síncrono, base de los divisores de frecuencia."}
+
+@fig blocks {"blocks": {"cnt": [120, 40, 130, 70, "Contador\nde n bits"], "cmp": [300, 40, 130, 70, "Comparador\ncnt = DIV/2 − 1"], "tff": [480, 40, 110, 70, "Biestable T\n(conmuta)"]}, "arrows": [[10, 75, 120, 75, "clk 50 MHz"], [250, 75, 300, 75, "cnt"], [430, 75, 480, 75, "fin"], [590, 75, 640, 75, "clk_out"]], "W": 650, "H": 140, "title": "Divisor de frecuencia", "cap": "Divisor de frecuencia: cuenta medio periodo de la salida y entonces conmuta."}
+
+@sim divf
+
 @ej p3-s1|Contador módulo N|Práctica 3|vhdl,cont|t8.mod10,t8.mod12
 @enun
 Diseña un contador síncrono de módulo $N$ configurable, con reset asíncrono, habilitación y una salida de fin de cuenta.

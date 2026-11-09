@@ -10,6 +10,10 @@
 
 Diseñar con esquemático y con VHDL los bloques combinacionales del [[t05|Tema 5]] y verlos funcionar en LEDs y displays.
 
+@fig sumador {"n": 4, "cap": "Estructura del sumador de 4 bits de la práctica."}
+
+@fig mux {"k": 2, "cap": "Multiplexor 4:1 que se pide en la práctica."}
+
 @ej p2-s1|Sumador de 4 bits|Práctica 2|vhdl,arit|t5.ripple4
 @enun
 Describe un sumador de 4 bits con acarreo de entrada y salida. Muestra la suma en 4 LEDs y el acarreo en un quinto.

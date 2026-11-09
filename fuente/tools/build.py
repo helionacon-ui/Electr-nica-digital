@@ -327,7 +327,7 @@ def build():
     render_math_all()
     for k in htmls: htmls[k] = finalize_math(htmls[k])
     css = open(os.path.join(ROOT, 'web', 'style.css')).read() + '\n' + katex_css()
-    app = open(os.path.join(ROOT, 'web', 'app.js')).read(); sims = open(os.path.join(ROOT, 'web', 'sims.js')).read()
+    app = open(os.path.join(ROOT, 'web', 'app.js')).read(); sims = open(os.path.join(ROOT, 'web', 'sims.js')).read() + '\n' + open(os.path.join(ROOT, 'web', 'sims2.js')).read()
     inl = {'css': css, 'app': app, 'sims': sims}
     main = hero(stats_list()) + ''.join(htmls[b['id']] for b in BLOCKS)
     master = page(TITLE, side_html(), main, inl)

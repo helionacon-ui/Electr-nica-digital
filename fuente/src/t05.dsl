@@ -14,6 +14,8 @@ Los mismos circuitos se necesitan una y otra vez: sumar, comparar, elegir una en
 - **Semisumador** (suma 2 bits): $S=A\oplus B$, $C_{out}=A\cdot B$.
 - **Sumador completo** (suma 2 bits y el acarreo de entrada $C_{in}$): $S=A\oplus B\oplus C_{in}$ y $C_{out}=AB+C_{in}(A\oplus B)$.
 
+@fig sumador {"n": 4, "cap": "Sumador de 4 bits con acarreo en cascada: el acarreo de salida de cada bit entra en el siguiente."}
+
 Se ha comprobado por código con las 8 combinaciones que da la suma binaria correcta.
 
 **Sumador de $n$ bits con acarreo en cascada (*ripple carry*):** encadenas $n$ sumadores completos, el $C_{out}$ de uno es el $C_{in}$ del siguiente. Es barato, pero el acarreo tiene que **viajar** por todos: con 4 etapas y 2 puertas de 10 ns por etapa, el retardo es $4\cdot2\cdot10=80$ ns. Los **sumadores con acarreo anticipado** (*carry look-ahead*) calculan los acarreos en paralelo y son más rápidos.
@@ -49,6 +51,8 @@ Un comparador de 1 bit da tres salidas: $A>B=A\overline{B}$, $A=B=\overline{A\op
 
 Un **multiplexor** (MUX) de $2^k$ a 1 tiene $2^k$ entradas de datos, $k$ entradas de **selección** y una salida: copia a la salida la entrada que indica el número de selección. Es un «selector de vía».
 
+@fig mux {"k": 2, "cap": "Multiplexor 4:1: las entradas S1S0 eligen cuál de las cuatro entradas llega a Y."}
+
 $$Y=\sum_{i=0}^{2^k-1} m_i(S)\cdot D_i$$
 
 **Truco de examen: implementar una función con un MUX.** Una función de $n$ variables cabe en un MUX de $2^{n-1}$ a 1. Las $n-1$ primeras variables van a la selección y la última variable (o su negada, 0 o 1) a cada entrada de datos.
@@ -79,9 +83,14 @@ $Y=\text{MUX}(A,B;\,C,\overline{C},\overline{C},C)$. Comprobado con las 8 combin
 - **Decodificador** $k$ a $2^k$: activa **una** salida según el número de entrada. Cada salida es un **minitérmino** de las entradas. Por eso con un decodificador y una puerta OR puedes implementar cualquier función: juntas las salidas de los minitérminos que valen 1. Tiene entrada de habilitación (*enable*).
 - **Codificador:** hace lo inverso: de $2^k$ líneas, activa el código de la línea activa. El **codificador de prioridad** decide cuando hay varias líneas a 1: gana la de mayor índice. Para las entradas $0110$ da $2$ y para $1010$ da $3$.
 
+@fig dec {"k": 2, "cap": "Decodificador 2:4 con habilitación EN: se activa una sola salida."}
+
 **Ampliar:** con decodificadores 2:4 puedes montar uno de 4:16 en árbol: uno de 2:4 habilita a cuatro más.
 
 @fig dectree {"cap":"Un decodificador 4:16 hecho con cinco 2:4. Los dos bits altos eligen cuál de los cuatro de la derecha se habilita; los dos bajos eligen la salida dentro de él."}
+
+@sim msi
+
 
 ## Display de 7 segmentos
 

@@ -2,7 +2,7 @@
 
 Guía de estudio interactiva de Electrónica Digital (UPCT, Grado en Ingeniería Biomédica, 3.º).
 
-Última actualización: 8 de noviembre de 2026.
+Última actualización: 9 de noviembre de 2026.
 
 Ábrela en: https://helionacon-ui.github.io/Electr-nica-digital/
 
