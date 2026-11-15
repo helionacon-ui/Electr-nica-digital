@@ -56,6 +56,50 @@
 <aside class="box formula"><div class="boxh"><span class="ic">∑</span> Cómo detectar el desbordamiento en C2</div><ul><li>Dos positivos que suman un negativo, o dos negativos que suman un positivo: hay desbordamiento.</li><li>Equivale a: el acarreo que entra al bit de signo es distinto del acarreo que sale de él.</li><li>Un positivo más un negativo <strong>nunca</strong> desborda.</li></ul></aside>
 <div class="sim" data-sim="ovf"><noscript>Este simulador necesita JavaScript.</noscript></div>
 <div class="sim" data-sim="bcdadd"><noscript>Este simulador necesita JavaScript.</noscript></div>
+<h3 id="h22-paso">Escribir −23 en complemento a dos, paso a paso</h3>
+<p>Para un número negativo en n bits se parte de su módulo, se invierten todos los bits y se suma 1. Después se comprueba el resultado sumándolo con el positivo: la suma debe dar cero.</p>
+<figure class="fig"><p class="ft">Figura interactiva · −23 en 8 bits</p>
+<div id="c2-paso" style="font-family:system-ui,sans-serif"><input id="c2-paso-s" type="range" min="0" max="6" step="1" value="0" style="width:100%"><div id="c2-paso-l" style="font-size:13px;color:#56635e;margin:4px 0">paso de la resolución (0 = problema): 0</div><canvas id="c2-paso-c" width="640" height="320" style="width:100%;max-width:640px;height:auto;display:block"></canvas><div id="c2-paso-t" style="font-size:15px;line-height:1.5;margin-top:8px;min-height:90px"></div></div>
+<figcaption>Sube el paso: se escribe 23 en binario, se invierten los bits, se suma 1 y se comprueba el signo y la suma con 23.</figcaption></figure>
+<div class="box trap"><h4>Trampas típicas</h4><ul><li>Sumar 1 antes de invertir los bits.</li><li>Olvidar el número de bits: el mismo patrón vale distinto en 8 que en 16 bits.</li><li>Dar por hecho que el acarreo que sale del último bit cuenta en el resultado.</li></ul></div>
+<script>
+(function(){
+  var T=[
+   'Escribir −23 en complemento a dos con 8 bits. Se pide el patrón de bits y una comprobación de que es correcto.',
+   '23 = 16 + 4 + 2 + 1, así que en binario de 8 bits es 0001 0111.',
+   'Complemento a uno: se invierten todos los bits, y 0001 0111 pasa a 1110 1000.',
+   'Complemento a dos: se suma 1 al complemento a uno, 1110 1000 + 1 = 1110 1001. Ese es el patrón de −23.',
+   'El bit más significativo es 1, así que el número es negativo. Valor: −128 + 64 + 32 + 8 + 1 = −23 ✓.',
+   'Comprobación equivalente: 256 − 233 = 23, porque 1110 1001 vale 233 sin signo. Por eso su valor con signo es −23.',
+   'Prueba de suma: 23 + (−23) = 0001 0111 + 1110 1001 = 1 0000 0000. Descartando el acarreo de salida, queda 0000 0000 = 0 ✓.'
+  ];
+  var cv=document.getElementById('c2-paso-c'), g=cv.getContext('2d'), sl=document.getElementById('c2-paso-s'),
+      lb=document.getElementById('c2-paso-l'), tx=document.getElementById('c2-paso-t');
+  function txt(s,x,y,col,sz,al){g.fillStyle=col;g.font=(sz||12)+'px system-ui,sans-serif';g.textAlign=al||'left';g.fillText(s,x,y);}
+  var X0=150, W=56;
+  function bits(str,y,col,hl){
+    for(var i=0;i<8;i++){ var x=X0+i*W;
+      g.fillStyle=(hl&&i===0)?'rgba(180,35,47,0.14)':'rgba(58,99,196,0.08)';
+      g.strokeStyle=(hl&&i===0)?'#b4232f':col; g.lineWidth=1.4;
+      g.fillRect(x,y-30,W-6,40); g.strokeRect(x,y-30,W-6,40);
+      txt(str[i],x+(W-6)/2,y-4,(hl&&i===0)?'#b4232f':col,18,'center'); } }
+  function draw(p){
+    g.clearRect(0,0,cv.width,cv.height);
+    var rows=[{y:70,lab:'23 en binario',s:'00010111',c:'#3a63c4',show:p>=1},
+              {y:150,lab:'invertir bits',s:'11101000',c:'#b8730c',show:p>=2},
+              {y:230,lab:'+ 1 → −23',s:'11101001',c:'#b4232f',show:p>=3}];
+    if(p>=1){ for(var i=0;i<8;i++) txt(String(Math.pow(2,7-i)),X0+i*W+(W-6)/2,28,'#56635e',11,'center'); txt('pesos',X0-10,28,'#56635e',11,'right'); }
+    rows.forEach(function(r){ if(r.show){ txt(r.lab,X0-12,r.y-4,'#16211d',12,'right'); bits(r.s,r.y,r.c,p>=4&&r.y===230); } });
+    if(p>=6){ txt('resultado de 23 + (−23):',X0-12,300,'#2c8a52',12,'right');
+      bits('00000000',300,'#2c8a52',false);
+      txt('acarreo 1 descartado',X0+8*W+4,278,'#56635e',11,'left'); }
+    lb.textContent='paso de la resolución (0 = problema): '+p;
+    tx.innerHTML='<div>'+T[p]+'</div>';
+  }
+  sl.addEventListener('input',function(){draw(+sl.value);});
+  draw(0);
+})();
+</script>
 <h2 id="h23">BCD: decimal en cuatro bits</h2>
 <p>En <strong>BCD</strong> (decimal codificado en binario) cada cifra decimal se escribe con 4 bits, y solo se usan las combinaciones <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0000</span></span></span></span> a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1001</span></span></span></span>. Así <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">4</span><span class="mord"><span class="mord">7</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">0100</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">011</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mord mathnormal mtight" style="margin-right:0.0715em;">C</span><span class="mord mathnormal mtight" style="margin-right:0.0278em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. Es cómodo para mostrar números en displays, pero ocupa más bits y sumar es más difícil.</p>
 <p><strong>Suma en BCD:</strong> suma cada cifra en binario. Si el resultado de una cifra supera 9 (o hay acarreo), <strong>suma 6</strong> para saltarte las 6 combinaciones prohibidas (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1010</span></span></span></span> a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1111</span></span></span></span>).</p>
