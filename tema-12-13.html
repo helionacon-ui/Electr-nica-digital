@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>T12–T13 · Lógica programable y VHDL · Electrónica Digital</title><meta name="description" content="Guía de estudio completa de Electrónica Digital (3.º Ingeniería Biomédica, UPCT): teoría, exámenes resueltos, prácticas con VHDL, simuladores y autoevaluación.">
+<title>T12–T13 · Lógica programable y VHDL · Electrónica Digital</title><meta name="description" content="Guía de estudio completa de Electrónica Digital (3.º Ingeniería Biomédica): teoría, exámenes resueltos, prácticas con VHDL, simuladores y autoevaluación.">
 <meta name="theme-color" content="#2457d6"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png"><script>window.SEARCH_URL="search.json";window.SW_URL="sw.js";</script><link rel="stylesheet" href="assets/app.css"><script src="asig-nav.js" defer></script>
 <link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
 <style id="lectura">
@@ -66,7 +66,7 @@ use ieee.std_logic_1164.all;
 
 entity puerta_and is
   port ( a, b : in  std_logic;
-         y    : out std_logic );
+         y: out std_logic );
 end puerta_and;
 
 architecture flujo of puerta_and is
@@ -82,10 +82,9 @@ use ieee.std_logic_1164.all;
 
 entity p2_mux4 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
+    d: in  std_logic_vector(3 downto 0);
     sel : in  std_logic_vector(1 downto 0);
-    y   : out std_logic
-  );
+    y: out std_logic);
 end p2_mux4;
 
 architecture rtl of p2_mux4 is
@@ -107,9 +106,8 @@ entity p3_contador is
   generic ( N : positive := 10 );
   port (
     clk, rst, en : in  std_logic;
-    q            : out std_logic_vector(3 downto 0);
-    fin          : out std_logic                       -- vale 1 en el último estado
-  );
+    q: out std_logic_vector(3 downto 0);
+    fin: out std_logic                       -- vale 1 en el último estado);
 end p3_contador;
 
 architecture rtl of p3_contador is
@@ -145,8 +143,7 @@ use ieee.std_logic_1164.all;
 entity p3_detector101 is
   port (
     clk, rst, x : in  std_logic;
-    z           : out std_logic
-  );
+    z: out std_logic);
 end p3_detector101;
 
 architecture rtl of p3_detector101 is
@@ -194,5 +191,5 @@ end rtl;</code></pre><a class="btn simgo" href="#sim-prac" data-simsel="det">Abr
 <div class="quiz" data-tag="t13"><div class="qs">En VHDL, <code>y &lt;= a and b;</code> describe:</div><div class="qo"><button type="button" class="opt" data-ok="1"><span class="ol">A</span><span>Una puerta AND siempre presente</span></button><button type="button" class="opt" data-ok="0"><span class="ol">B</span><span>Un proceso secuencial</span></button><button type="button" class="opt" data-ok="0"><span class="ol">C</span><span>Una variable temporal</span></button><button type="button" class="opt" data-ok="0"><span class="ol">D</span><span>Una instrucción que se ejecuta una sola vez</span></button></div><div class="qx" hidden>Es una asignación concurrente: hardware que existe de forma permanente.</div></div>
 <div class="quiz" data-tag="t13"><div class="qs">¿Qué provoca un <code>if</code> sin <code>else</code> dentro de un proceso combinacional?</div><div class="qo"><button type="button" class="opt" data-ok="0"><span class="ol">A</span><span>Una puerta NOT</span></button><button type="button" class="opt" data-ok="0"><span class="ol">B</span><span>Un error de sintaxis siempre</span></button><button type="button" class="opt" data-ok="1"><span class="ol">C</span><span>Un latch inferido</span></button><button type="button" class="opt" data-ok="0"><span class="ol">D</span><span>Un contador</span></button></div><div class="qx" hidden>La salida mantiene su valor en la rama no cubierta, y eso es memoria.</div></div>
 <div class="quiz" data-tag="t13"><div class="qs">Un contador módulo 10 en VHDL necesita como mínimo una señal de:</div><div class="qo"><button type="button" class="opt" data-ok="0"><span class="ol">A</span><span>5 bits</span></button><button type="button" class="opt" data-ok="0"><span class="ol">B</span><span>10 bits</span></button><button type="button" class="opt" data-ok="0"><span class="ol">C</span><span>3 bits</span></button><button type="button" class="opt" data-ok="1"><span class="ol">D</span><span>4 bits</span></button></div><div class="qx" hidden><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span><span class="mop"><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">10</span><span class="mclose">⌉</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>.</div></div></section><nav class="pager cardgrid"><a class="tile" href="tema-10-11.html"><span>← Anterior</span><b>T10–T11 · Autómatas síncronos y descripciones</b></a><a class="tile" href="laboratorio.html"><span>Siguiente →</span><b>Prácticas y simulador</b></a></nav>
-<div class="foot">Guía no oficial de Electrónica Digital (UPCT) · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
+<div class="foot">Guía no oficial de Electrónica Digital · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
 <script src="assets/sims.js"></script><script src="assets/app.js"></script></body></html>

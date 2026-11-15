@@ -12,8 +12,7 @@
   --bad:#ff8a80; --bad-soft:#3b1d1b; --code:#10141b; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 24px rgba(0,0,0,.35);
   --c1:#7aa2ff; --c2:#ff9966; --c3:#4fd1c5; --c4:#c792ff; --c5:#ff7eb6; --c6:#a3d65c; --c7:#5bc0f8; --c8:#f0c75a;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme=light]){
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
   --bg:#12151c; --paper:#1a1f29; --ink:#e7eaf0; --ink2:#b5bdcb; --mut:#8791a3; --line:#2c3443; --soft:#222937;
   --accent:#7aa2ff; --accent-soft:#1f2b49; --ok:#5fd39a; --ok-soft:#173326; --warn:#f0b455; --warn-soft:#3a2d12;
   --bad:#ff8a80; --bad-soft:#3b1d1b; --code:#10141b; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 24px rgba(0,0,0,.35);
@@ -163,20 +162,13 @@ dl.gl{margin:0;padding:9px 0;border-bottom:1px solid var(--line)} dl.gl dt{font-
 .small{font-size:.86rem;color:var(--mut)}
 .mark{background:#ffe27a;color:#111;border-radius:3px}
 .foot{margin-top:50px;padding-top:14px;border-top:1px solid var(--line);font-size:.84rem;color:var(--mut)}
-@media (max-width:900px){
-  :root{--fs:16.5px;--sidebar:min(86vw,330px)}
-  .hamb{display:inline-block}
-  .side{position:fixed;left:0;top:53px;z-index:25;transform:translateX(-102%);transition:transform .2s;box-shadow:var(--shadow);background:var(--paper)}
+@media (max-width:900px){:root{--fs:16.5px;--sidebar:min(86vw,330px)}.hamb{display:inline-block}.side{position:fixed;left:0;top:53px;z-index:25;transform:translateX(-102%);transition:transform .2s;box-shadow:var(--shadow);background:var(--paper)}
   body.nav .side{transform:none}
-  main{padding:16px 16px 80px}
-  .top .brand small{display:none}
-  .ejh{padding:10px 12px}.enun{padding:4px 12px}
+  main{padding:16px 16px 80px}.top .brand small{display:none}.ejh{padding:10px 12px}.enun{padding:4px 12px}
   details.paso,details.res{margin:8px 10px}.ej>.box{margin:8px 10px}
 }
-@media print{
-  .top,.side,.hamb,.search,.btn,.chips{display:none!important}
-  body{background:#fff;color:#000}.shell{display:block}main{padding:0}
-  .ej,.box,figure{break-inside:avoid}
+@media print{.top,.side,.hamb,.search,.btn,.chips{display:none!important}
+  body{background:#fff;color:#000}.shell{display:block}main{padding:0}.ej,.box,figure{break-inside:avoid}
   section.blk{break-before:page}
   a{color:inherit;text-decoration:none}
   details>summary::before{content:""}
@@ -199,9 +191,7 @@ a.tile{border-left:5px solid var(--accent)}
 .simgo{display:inline-block;margin:0 0 10px 12px;text-decoration:none;font-size:.85rem}
 .codeblock{margin:10px 0}
 .codehead{font:600 .78rem ui-monospace,monospace;color:var(--mut);padding:4px 10px;background:var(--soft);border:1px solid var(--line);border-bottom:0;border-radius:9px 9px 0 0}
-.codeblock pre.code{margin:0;border-radius:0 0 9px 9px;overflow-x:auto}
-
-.dmrow{display:flex;flex-wrap:wrap;justify-content:center;column-gap:2.2em;row-gap:0}.dmrow .dmath{margin:.35em 0;max-width:100%}
+.codeblock pre.code{margin:0;border-radius:0 0 9px 9px;overflow-x:auto}.dmrow{display:flex;flex-wrap:wrap;justify-content:center;column-gap:2.2em;row-gap:0}.dmrow .dmath{margin:.35em 0;max-width:100%}
 .sim .lamp{display:inline-block;min-width:44px;text-align:center;padding:5px 10px;border-radius:8px;border:1px solid var(--line);font:.85rem ui-monospace,monospace;margin:2px 4px 2px 0;color:var(--ink2);background:var(--bg)}
 .sim .lamp.on{background:var(--ok-soft);color:var(--ok);border-color:var(--ok);font-weight:700}
 
@@ -212,7 +202,7 @@ a.tile{border-left:5px solid var(--accent)}
 <header class="top"><button class="btn hamb" id="hamb" aria-label="Menú">☰</button>
 <div class="brand">Electrónica Digital <small>Actualizada el 9 de noviembre de 2026</small></div>
 <button class="btn" id="expand" type="button">Desplegar todo</button><button class="btn" id="theme" type="button" aria-label="Cambiar tema">◐</button></header>
-<div class="shell"><nav class="side" aria-label="Índice"><div class="search"><input id="q" type="search" placeholder="Buscar en toda la guía…" aria-label="Buscar"></div><div id="hits"></div><h5>Empezar</h5><a href="#empieza" data-blk="empieza" style="--tc:var(--c1)"><i class="dot"></i><span>Empieza aquí (desde cero)</span></a><a href="#examen" data-blk="examen" style="--tc:var(--c1)"><i class="dot"></i><span>El examen y cómo estudiar</span></a><h5>Unidad 1 · Introducción</h5><a href="#t00" data-blk="t00" style="--tc:var(--c1)"><i class="dot"></i><span>T0 · Introducción</span><span class="pct" data-grp="t00"></span></a><a href="#t01" data-blk="t01" style="--tc:var(--c1)"><i class="dot"></i><span>T1 · Sistemas digitales</span><span class="pct" data-grp="t01"></span></a><a href="#t02" data-blk="t02" style="--tc:var(--c1)"><i class="dot"></i><span>T2 · Numeración y códigos</span><span class="pct" data-grp="t02"></span></a><a href="#t03" data-blk="t03" style="--tc:var(--c1)"><i class="dot"></i><span>T3 · Álgebra de Boole</span><span class="pct" data-grp="t03"></span></a><h5>Unidad 2 · Combinacional</h5><a href="#t04" data-blk="t04" style="--tc:var(--c3)"><i class="dot"></i><span>T4 · Familias lógicas</span><span class="pct" data-grp="t04"></span></a><a href="#t05" data-blk="t05" style="--tc:var(--c3)"><i class="dot"></i><span>T5 · Bloques combinacionales</span><span class="pct" data-grp="t05"></span></a><h5>Unidad 3 · Secuencial</h5><a href="#t06" data-blk="t06" style="--tc:var(--c4)"><i class="dot"></i><span>T6 · Biestables</span><span class="pct" data-grp="t06"></span></a><a href="#t07" data-blk="t07" style="--tc:var(--c4)"><i class="dot"></i><span>T7 · Memorias y PLD</span><span class="pct" data-grp="t07"></span></a><a href="#t08" data-blk="t08" style="--tc:var(--c4)"><i class="dot"></i><span>T8 · Contadores</span><span class="pct" data-grp="t08"></span></a><a href="#t09" data-blk="t09" style="--tc:var(--c4)"><i class="dot"></i><span>T9 · Registros</span><span class="pct" data-grp="t09"></span></a><a href="#t10" data-blk="t10" style="--tc:var(--c5)"><i class="dot"></i><span>T10 · Autómatas síncronos</span><span class="pct" data-grp="t10"></span></a><a href="#t11" data-blk="t11" style="--tc:var(--c5)"><i class="dot"></i><span>T11 · Descripciones</span><span class="pct" data-grp="t11"></span></a><h5>Unidad 4 · Programable</h5><a href="#t12" data-blk="t12" style="--tc:var(--c6)"><i class="dot"></i><span>T12 · Lógica programable (FPGA)</span><span class="pct" data-grp="t12"></span></a><a href="#t13" data-blk="t13" style="--tc:var(--c6)"><i class="dot"></i><span>T13 · VHDL</span><span class="pct" data-grp="t13"></span></a><h5>Prácticas</h5><a href="#p1" data-blk="p1" style="--tc:var(--c7)"><i class="dot"></i><span>P1 · Entorno ISE y Basys</span></a><a href="#p2" data-blk="p2" style="--tc:var(--c7)"><i class="dot"></i><span>P2 · Combinacional</span></a><a href="#p3" data-blk="p3" style="--tc:var(--c7)"><i class="dot"></i><span>P3 · Secuenciales</span></a><a href="#p4" data-blk="p4" style="--tc:var(--c7)"><i class="dot"></i><span>P4 · VHDL (con IA)</span></a><a href="#p567" data-blk="p567" style="--tc:var(--c7)"><i class="dot"></i><span>P5–P7 · Proyecto integrador</span></a><h5>Practicar</h5><a href="#examenes" data-blk="examenes" style="--tc:var(--c8)"><i class="dot"></i><span>Exámenes resueltos</span></a><a href="#hojas" data-blk="hojas" style="--tc:var(--c8)"><i class="dot"></i><span>Hojas resueltas</span></a><a href="#demos" data-blk="demos" style="--tc:var(--c8)"><i class="dot"></i><span>Demostraciones</span></a><a href="#autoeval" data-blk="autoeval" style="--tc:var(--c8)"><i class="dot"></i><span>Autoevaluación</span></a><a href="#simulacros" data-blk="simulacros" style="--tc:var(--c8)"><i class="dot"></i><span>Simulacros</span></a><h5>Repasar</h5><a href="#formulario" data-blk="formulario" style="--tc:var(--c1)"><i class="dot"></i><span>Formulario</span></a><a href="#formulario1p" data-blk="formulario1p" style="--tc:var(--c1)"><i class="dot"></i><span>Formulario de 1 página</span></a><a href="#glosario" data-blk="glosario" style="--tc:var(--c1)"><i class="dot"></i><span>Glosario</span></a><a href="#plan" data-blk="plan" style="--tc:var(--c1)"><i class="dot"></i><span>Plan de estudio</span></a></nav><main><div class="page"><header class="hero"><div class="eyebrow">UPCT · Grado en Ingeniería Biomédica · 3.º curso</div><p class="fecha">Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p><h1>Electrónica <span>Digital</span></h1><p class="sub">Guía para aprobar</p><div class="stats"><div><b>14</b><span>temas (T0–T13)</span></div><div><b>11</b><span>problemas de examen resueltos</span></div><div><b>18</b><span>problemas de hojas resueltos</span></div><div><b>225</b><span>comprobaciones por código</span></div></div><div class="cta"><a class="btn pri" href="#empieza">Empieza desde cero</a><a class="btn" href="empezar.html">El examen</a><a class="btn" href="examenes.html">Exámenes resueltos</a><a class="btn" href="laboratorio.html">Prácticas</a><a class="btn" href="autoevaluacion.html">Autoevaluación</a><a class="btn" href="formulario.html">Formulario</a></div></header><section class="blk" id="empieza" style="--tc:var(--c1)"><div class="bhead"><div class="kick">Portada</div><h1>Empieza aquí</h1><p>Qué es la asignatura, lo que necesitas saber antes de empezar y cómo usar esta guía.</p></div><h2 id="h1">Qué vas a aprender</h2>
+<div class="shell"><nav class="side" aria-label="Índice"><div class="search"><input id="q" type="search" placeholder="Buscar en toda la guía…" aria-label="Buscar"></div><div id="hits"></div><h5>Empezar</h5><a href="#empieza" data-blk="empieza" style="--tc:var(--c1)"><i class="dot"></i><span>Empieza aquí (desde cero)</span></a><a href="#examen" data-blk="examen" style="--tc:var(--c1)"><i class="dot"></i><span>El examen y cómo estudiar</span></a><h5>Unidad 1 · Introducción</h5><a href="#t00" data-blk="t00" style="--tc:var(--c1)"><i class="dot"></i><span>T0 · Introducción</span><span class="pct" data-grp="t00"></span></a><a href="#t01" data-blk="t01" style="--tc:var(--c1)"><i class="dot"></i><span>T1 · Sistemas digitales</span><span class="pct" data-grp="t01"></span></a><a href="#t02" data-blk="t02" style="--tc:var(--c1)"><i class="dot"></i><span>T2 · Numeración y códigos</span><span class="pct" data-grp="t02"></span></a><a href="#t03" data-blk="t03" style="--tc:var(--c1)"><i class="dot"></i><span>T3 · Álgebra de Boole</span><span class="pct" data-grp="t03"></span></a><h5>Unidad 2 · Combinacional</h5><a href="#t04" data-blk="t04" style="--tc:var(--c3)"><i class="dot"></i><span>T4 · Familias lógicas</span><span class="pct" data-grp="t04"></span></a><a href="#t05" data-blk="t05" style="--tc:var(--c3)"><i class="dot"></i><span>T5 · Bloques combinacionales</span><span class="pct" data-grp="t05"></span></a><h5>Unidad 3 · Secuencial</h5><a href="#t06" data-blk="t06" style="--tc:var(--c4)"><i class="dot"></i><span>T6 · Biestables</span><span class="pct" data-grp="t06"></span></a><a href="#t07" data-blk="t07" style="--tc:var(--c4)"><i class="dot"></i><span>T7 · Memorias y PLD</span><span class="pct" data-grp="t07"></span></a><a href="#t08" data-blk="t08" style="--tc:var(--c4)"><i class="dot"></i><span>T8 · Contadores</span><span class="pct" data-grp="t08"></span></a><a href="#t09" data-blk="t09" style="--tc:var(--c4)"><i class="dot"></i><span>T9 · Registros</span><span class="pct" data-grp="t09"></span></a><a href="#t10" data-blk="t10" style="--tc:var(--c5)"><i class="dot"></i><span>T10 · Autómatas síncronos</span><span class="pct" data-grp="t10"></span></a><a href="#t11" data-blk="t11" style="--tc:var(--c5)"><i class="dot"></i><span>T11 · Descripciones</span><span class="pct" data-grp="t11"></span></a><h5>Unidad 4 · Programable</h5><a href="#t12" data-blk="t12" style="--tc:var(--c6)"><i class="dot"></i><span>T12 · Lógica programable (FPGA)</span><span class="pct" data-grp="t12"></span></a><a href="#t13" data-blk="t13" style="--tc:var(--c6)"><i class="dot"></i><span>T13 · VHDL</span><span class="pct" data-grp="t13"></span></a><h5>Prácticas</h5><a href="#p1" data-blk="p1" style="--tc:var(--c7)"><i class="dot"></i><span>P1 · Entorno ISE y Basys</span></a><a href="#p2" data-blk="p2" style="--tc:var(--c7)"><i class="dot"></i><span>P2 · Combinacional</span></a><a href="#p3" data-blk="p3" style="--tc:var(--c7)"><i class="dot"></i><span>P3 · Secuenciales</span></a><a href="#p4" data-blk="p4" style="--tc:var(--c7)"><i class="dot"></i><span>P4 · VHDL (con IA)</span></a><a href="#p567" data-blk="p567" style="--tc:var(--c7)"><i class="dot"></i><span>P5–P7 · Proyecto integrador</span></a><h5>Practicar</h5><a href="#examenes" data-blk="examenes" style="--tc:var(--c8)"><i class="dot"></i><span>Exámenes resueltos</span></a><a href="#hojas" data-blk="hojas" style="--tc:var(--c8)"><i class="dot"></i><span>Hojas resueltas</span></a><a href="#demos" data-blk="demos" style="--tc:var(--c8)"><i class="dot"></i><span>Demostraciones</span></a><a href="#autoeval" data-blk="autoeval" style="--tc:var(--c8)"><i class="dot"></i><span>Autoevaluación</span></a><a href="#simulacros" data-blk="simulacros" style="--tc:var(--c8)"><i class="dot"></i><span>Simulacros</span></a><h5>Repasar</h5><a href="#formulario" data-blk="formulario" style="--tc:var(--c1)"><i class="dot"></i><span>Formulario</span></a><a href="#formulario1p" data-blk="formulario1p" style="--tc:var(--c1)"><i class="dot"></i><span>Formulario de 1 página</span></a><a href="#glosario" data-blk="glosario" style="--tc:var(--c1)"><i class="dot"></i><span>Glosario</span></a><a href="#plan" data-blk="plan" style="--tc:var(--c1)"><i class="dot"></i><span>Plan de estudio</span></a></nav><main><div class="page"><header class="hero"><div class="eyebrow">Grado en Ingeniería Biomédica · 3.º curso</div><p class="fecha">Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p><h1>Electrónica <span>Digital</span></h1><p class="sub">Guía para aprobar</p><div class="stats"><div><b>14</b><span>temas (T0–T13)</span></div><div><b>11</b><span>problemas de examen resueltos</span></div><div><b>18</b><span>problemas de hojas resueltos</span></div><div><b>225</b><span>comprobaciones por código</span></div></div><div class="cta"><a class="btn pri" href="#empieza">Empieza desde cero</a><a class="btn" href="empezar.html">El examen</a><a class="btn" href="examenes.html">Exámenes resueltos</a><a class="btn" href="laboratorio.html">Prácticas</a><a class="btn" href="autoevaluacion.html">Autoevaluación</a><a class="btn" href="formulario.html">Formulario</a></div></header><section class="blk" id="empieza" style="--tc:var(--c1)"><div class="bhead"><div class="kick">Portada</div><h1>Empieza aquí</h1><p>Qué es la asignatura, lo que necesitas saber antes de empezar y cómo usar esta guía.</p></div><h2 id="h1">Qué vas a aprender</h2>
 <p>Electrónica Digital es una asignatura obligatoria de <strong>3.º de Ingeniería Biomédica</strong> (4,5 ECTS, primer cuatrimestre). Aprendes a <strong>diseñar circuitos que trabajan con unos y ceros</strong>: desde una puerta que decide si se abre un toldo hasta una máquina que reconoce la combinación de una caja fuerte.</p>
 <p>Todo lo que se construye en electrónica digital se reduce a dos tipos de circuitos:</p>
 <ul><li><strong>Combinacionales</strong>: la salida depende <em>solo</em> de las entradas de ahora. No tienen memoria. Ejemplo: un sumador.</li><li><strong>Secuenciales</strong>: la salida depende de las entradas de ahora <em>y de lo que pasó antes</em>. Tienen memoria. Ejemplo: un contador.</li></ul>
@@ -660,7 +650,7 @@ use ieee.std_logic_1164.all;
 
 entity puerta_and is
   port ( a, b : in  std_logic;
-         y    : out std_logic );
+         y: out std_logic );
 end puerta_and;
 
 architecture flujo of puerta_and is
@@ -676,10 +666,9 @@ use ieee.std_logic_1164.all;
 
 entity p2_mux4 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
+    d: in  std_logic_vector(3 downto 0);
     sel : in  std_logic_vector(1 downto 0);
-    y   : out std_logic
-  );
+    y: out std_logic);
 end p2_mux4;
 
 architecture rtl of p2_mux4 is
@@ -701,9 +690,8 @@ entity p3_contador is
   generic ( N : positive := 10 );
   port (
     clk, rst, en : in  std_logic;
-    q            : out std_logic_vector(3 downto 0);
-    fin          : out std_logic                       -- vale 1 en el último estado
-  );
+    q: out std_logic_vector(3 downto 0);
+    fin: out std_logic                       -- vale 1 en el último estado);
 end p3_contador;
 
 architecture rtl of p3_contador is
@@ -739,8 +727,7 @@ use ieee.std_logic_1164.all;
 entity p3_detector101 is
   port (
     clk, rst, x : in  std_logic;
-    z           : out std_logic
-  );
+    z: out std_logic);
 end p3_detector101;
 
 architecture rtl of p3_detector101 is
@@ -802,10 +789,9 @@ use ieee.std_logic_1164.all;
 
 entity p1_leds is
   port (
-    sw  : in  std_logic_vector(7 downto 0);   -- interruptores
+    sw: in  std_logic_vector(7 downto 0);   -- interruptores
     btn : in  std_logic_vector(3 downto 0);   -- pulsadores
-    led : out std_logic_vector(7 downto 0)    -- LEDs
-  );
+    led : out std_logic_vector(7 downto 0)    -- LEDs);
 end p1_leds;
 
 architecture flujo of p1_leds is
@@ -849,10 +835,9 @@ use ieee.numeric_std.all;
 entity p2_sum4 is
   port (
     a, b : in  std_logic_vector(3 downto 0);
-    cin  : in  std_logic;
-    s    : out std_logic_vector(3 downto 0);
-    cout : out std_logic
-  );
+    cin: in  std_logic;
+    s: out std_logic_vector(3 downto 0);
+    cout : out std_logic);
 end p2_sum4;
 
 architecture rtl of p2_sum4 is
@@ -870,9 +855,8 @@ use ieee.numeric_std.all;
 
 entity p2_cmp4 is
   port (
-    a, b       : in  std_logic_vector(3 downto 0);
-    gt, eq, lt : out std_logic
-  );
+    a, b: in  std_logic_vector(3 downto 0);
+    gt, eq, lt : out std_logic);
 end p2_cmp4;
 
 architecture rtl of p2_cmp4 is
@@ -887,10 +871,9 @@ use ieee.std_logic_1164.all;
 
 entity p2_mux4 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
+    d: in  std_logic_vector(3 downto 0);
     sel : in  std_logic_vector(1 downto 0);
-    y   : out std_logic
-  );
+    y: out std_logic);
 end p2_mux4;
 
 architecture rtl of p2_mux4 is
@@ -909,9 +892,8 @@ use ieee.std_logic_1164.all;
 
 entity p2_seg7 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
-    seg : out std_logic_vector(6 downto 0)
-  );
+    d: in  std_logic_vector(3 downto 0);
+    seg : out std_logic_vector(6 downto 0));
 end p2_seg7;
 
 architecture rtl of p2_seg7 is
@@ -967,9 +949,8 @@ entity p3_contador is
   generic ( N : positive := 10 );
   port (
     clk, rst, en : in  std_logic;
-    q            : out std_logic_vector(3 downto 0);
-    fin          : out std_logic                       -- vale 1 en el último estado
-  );
+    q: out std_logic_vector(3 downto 0);
+    fin: out std_logic                       -- vale 1 en el último estado);
 end p3_contador;
 
 architecture rtl of p3_contador is
@@ -1002,13 +983,12 @@ entity p3_divisor is
   generic ( DIV : positive := 50_000_000 );     -- relación f_in / f_out (número par)
   port (
     clk, rst : in  std_logic;
-    clk_out  : out std_logic
-  );
+    clk_out: out std_logic);
 end p3_divisor;
 
 architecture rtl of p3_divisor is
   signal cnt : integer range 0 to DIV/2 - 1 := 0;
-  signal s   : std_logic := '0';
+  signal s: std_logic := '0';
 begin
   process (clk, rst)
   begin
@@ -1035,15 +1015,14 @@ entity p3_antirrebote is
   generic ( LIM : positive := 1_000_000 );
   port (
     clk, btn : in  std_logic;
-    limpio   : out std_logic
-  );
+    limpio: out std_logic);
 end p3_antirrebote;
 
 architecture rtl of p3_antirrebote is
   signal s1, s2 : std_logic := '0';           -- sincronizador de dos biestables
-  signal prev   : std_logic := '0';
-  signal cnt    : integer range 0 to LIM := 0;
-  signal sal    : std_logic := '0';
+  signal prev: std_logic := '0';
+  signal cnt: integer range 0 to LIM := 0;
+  signal sal: std_logic := '0';
 begin
   process (clk)
   begin
@@ -1069,8 +1048,7 @@ use ieee.std_logic_1164.all;
 entity p3_detector101 is
   port (
     clk, rst, x : in  std_logic;
-    z           : out std_logic
-  );
+    z: out std_logic);
 end p3_detector101;
 
 architecture rtl of p3_detector101 is
@@ -1107,7 +1085,7 @@ contador mod 12: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1]
 divisor 50 MHz -&gt; 1 Hz: DIV=50000000, cuenta hasta 24999999, 25 bits
 divisor 50 MHz -&gt; 1 kHz: DIV=50000, cuenta hasta 24999, 15 bits
 entrada : 00101011111111010000000000
-salida  : 00000000000011111111110000
+salida: 00000000000011111111110000
 detector 101: x = [1, 0, 1, 0, 1, 1, 0, 1]  z = [0, 0, 1, 0, 1, 0, 0, 1]
 Comprobaciones: OK</code></pre></div>
 <h2 id="h81">Qué escribir en la memoria</h2>
@@ -1125,11 +1103,10 @@ use ieee.numeric_std.all;
 
 entity p4_display4 is
   port (
-    clk    : in  std_logic;                        -- 50 MHz
+    clk: in  std_logic;                        -- 50 MHz
     d3, d2, d1, d0 : in std_logic_vector(3 downto 0);
-    seg    : out std_logic_vector(6 downto 0);     -- activos a nivel bajo
-    an     : out std_logic_vector(3 downto 0)      -- ánodos, activos a nivel bajo
-  );
+    seg: out std_logic_vector(6 downto 0);     -- activos a nivel bajo
+    an: out std_logic_vector(3 downto 0)      -- ánodos, activos a nivel bajo);
 end p4_display4;
 
 architecture rtl of p4_display4 is
@@ -1178,16 +1155,14 @@ use ieee.numeric_std.all;
 
 entity p6_alarma is
   generic (
-    T_ALTA  : natural := 375;    -- 37,5 °C: se activa la alarma de alta
-    T_BAJA  : natural := 360;    -- 36,0 °C: se activa la alarma de baja
-    HIST    : natural := 5       -- 0,5 °C de histéresis
-  );
+    T_ALTA: natural := 375;    -- 37,5 °C: se activa la alarma de alta
+    T_BAJA: natural := 360;    -- 36,0 °C: se activa la alarma de baja
+    HIST: natural := 5       -- 0,5 °C de histéresis);
   port (
     clk, rst : in  std_logic;
-    temp     : in  std_logic_vector(9 downto 0);
-    al_alta  : out std_logic;
-    al_baja  : out std_logic
-  );
+    temp: in  std_logic_vector(9 downto 0);
+    al_alta: out std_logic;
+    al_baja: out std_logic);
 end p6_alarma;
 
 architecture rtl of p6_alarma is
@@ -1525,7 +1500,7 @@ Comprobaciones: OK</code></pre></div>
 <p>El recuento de problemas por tipo está en <a class="xref" data-ref="examen" href="#examen">El examen y cómo estudiar</a>. Con solo tres exámenes no es una regla, pero orienta: <strong>bloques MSI</strong>, <strong>aritmética y códigos</strong> y <strong>autómatas</strong> aparecen en los tres; los contadores con biestables, en uno. Dedica la mitad del tiempo a esos tres grupos.</p>
 <h2 id="h111">El día del examen</h2>
 <ul><li>Lee <strong>todos</strong> los enunciados y empieza por el que más seguro estés.</li><li>En cada problema, <strong>dibuja lo que te piden</strong> (esquema, diagrama de estados, tabla) y explica en una frase por qué.</li><li>Un cronograma sin explicación no cuenta: escribe qué ocurre en cada flanco.</li><li>Guarda <strong>10 minutos</strong> para revisar: ¿cabe el resultado en los bits que has elegido? ¿Has cubierto el solapamiento? ¿Has puesto reset?</li></ul></section>
-<div class="foot">Guía no oficial de Electrónica Digital (UPCT) · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
+<div class="foot">Guía no oficial de Electrónica Digital · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
 <script>(function(){
 'use strict';
 var S=window.__sims=window.__sims||{};
@@ -1593,12 +1568,12 @@ S.conv=function(el){
     if(isNaN(v)){out.textContent='Introduce un número válido en la base elegida.';return}
     var n=+nb.value,min=-Math.pow(2,n-1),max=Math.pow(2,n-1)-1,L=[];
     L.push('Valor decimal : '+v);
-    L.push('Binario puro  : '+(v<0?'-':'')+Math.abs(v).toString(2));
-    L.push('Octal / Hex   : '+(v<0?'-':'')+Math.abs(v).toString(8)+' / '+(v<0?'-':'')+Math.abs(v).toString(16).toUpperCase());
-    if(v>=min&&v<=max){var u=(v<0)?(Math.pow(2,n)+v):v; L.push('C2 ('+n+' bits)   : '+pad(u.toString(2),n)+'  [rango '+min+' a '+max+']')}
-    else L.push('C2 ('+n+' bits)   : fuera de rango ['+min+', '+max+'] → desbordamiento');
-    if(v>=0){L.push('BCD natural   : '+String(v).split('').map(function(d){return pad((+d).toString(2),4)}).join(' '));
-             L.push('BCD exceso 3  : '+String(v).split('').map(function(d){return pad((+d+3).toString(2),4)}).join(' '));}
+    L.push('Binario puro: '+(v<0?'-':'')+Math.abs(v).toString(2));
+    L.push('Octal / Hex: '+(v<0?'-':'')+Math.abs(v).toString(8)+' / '+(v<0?'-':'')+Math.abs(v).toString(16).toUpperCase());
+    if(v>=min&&v<=max){var u=(v<0)?(Math.pow(2,n)+v):v; L.push('C2 ('+n+' bits): '+pad(u.toString(2),n)+'  [rango '+min+' a '+max+']')}
+    else L.push('C2 ('+n+' bits): fuera de rango ['+min+', '+max+'] → desbordamiento');
+    if(v>=0){L.push('BCD natural: '+String(v).split('').map(function(d){return pad((+d).toString(2),4)}).join(' '));
+             L.push('BCD exceso 3: '+String(v).split('').map(function(d){return pad((+d+3).toString(2),4)}).join(' '));}
     out.textContent=L.join('\n');
   }
   [inp,sel,nb].forEach(function(x){x.addEventListener('input',run)}); run();
@@ -1754,7 +1729,7 @@ S.prac=function(el){
      inputs:[['a',0,15,5],['b',0,15,9]],run:function(v){return {c:['A='+v.a+'  B='+v.b,'A>B='+(v.a>v.b?1:0)+'  A=B='+(v.a===v.b?1:0)+'  A<B='+(v.a<v.b?1:0)],w:null}}},
    mux4:{t:'Multiplexor 4:1 (Práctica 2)',vhdl:"with sel select\n  y <= d0 when \"00\",\n       d1 when \"01\",\n       d2 when \"10\",\n       d3 when others;",
      inputs:[['d',0,15,6],['sel',0,3,2]],run:function(v){var bit=(v.d>>v.sel)&1;return {c:['d3d2d1d0='+pad(v.d.toString(2),4)+'  sel='+pad(v.sel.toString(2),2),'y = d'+v.sel+' = '+bit],w:null}}},
-   seg7:{t:'Decodificador BCD a 7 segmentos (Práctica 2)',vhdl:"with d select\n  seg <= \"0000001\" when x\"0\",   -- abcdefg, activo a 0 en Basys\n         \"1001111\" when x\"1\",\n         \"0010010\" when x\"2\",\n         ... \n         \"1111111\" when others;",
+   seg7:{t:'Decodificador BCD a 7 segmentos (Práctica 2)',vhdl:"with d select\n  seg <= \"0000001\" when x\"0\",   -- abcdefg, activo a 0 en Basys\n         \"1001111\" when x\"1\",\n         \"0010010\" when x\"2\",\n... \n         \"1111111\" when others;",
      inputs:[['d',0,15,7]],run:function(v){var T=['1111110','0110000','1101101','1111001','0110011','1011011','1011111','1110000','1111111','1111011'],s=T[v.d]||'0000000';var a='abcdefg'.split('').filter(function(c,i){return s[i]==='1'}).join('');return {c:['d='+v.d,'segmentos activos (a..g): '+s+'  → '+(a||'ninguno'),'Basys (activo a 0): '+s.split('').map(function(x){return x==='1'?'0':'1'}).join('')],w:null}}},
    cnt:{t:'Contador módulo N con reloj (Práctica 3)',vhdl:"process(clk, rst)\nbegin\n  if rst = '1' then q <= (others => '0');\n  elsif rising_edge(clk) then\n    if q = N-1 then q <= (others => '0');\n    else q <= q + 1; end if;\n  end if;\nend process;",
      inputs:[['N',2,16,10],['ciclos',4,30,16]],run:function(v){var q=0,Q=[];for(var i=0;i<v.ciclos;i++){Q.push(q);q=(q+1)%v.N}return {c:['módulo '+v.N+' → '+Math.ceil(Math.log(v.N)/Math.LN2)+' bits','q = '+Q.join(', ')],w:[['q0',Q.map(function(x){return x&1}),true],['q1',Q.map(function(x){return (x>>1)&1}),true],['q2',Q.map(function(x){return (x>>2)&1}),true],['q3',Q.map(function(x){return (x>>3)&1}),true]],n:v.ciclos}}},

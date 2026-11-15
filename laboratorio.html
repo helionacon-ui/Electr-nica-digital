@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Prácticas y simulador · Electrónica Digital</title><meta name="description" content="Guía de estudio completa de Electrónica Digital (3.º Ingeniería Biomédica, UPCT): teoría, exámenes resueltos, prácticas con VHDL, simuladores y autoevaluación.">
+<title>Prácticas y simulador · Electrónica Digital</title><meta name="description" content="Guía de estudio completa de Electrónica Digital (3.º Ingeniería Biomédica): teoría, exámenes resueltos, prácticas con VHDL, simuladores y autoevaluación.">
 <meta name="theme-color" content="#2457d6"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png"><script>window.SEARCH_URL="search.json";window.SW_URL="sw.js";</script><link rel="stylesheet" href="assets/app.css"><script src="asig-nav.js" defer></script>
 <link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
 <style id="lectura">
@@ -47,10 +47,9 @@ use ieee.std_logic_1164.all;
 
 entity p1_leds is
   port (
-    sw  : in  std_logic_vector(7 downto 0);   -- interruptores
+    sw: in  std_logic_vector(7 downto 0);   -- interruptores
     btn : in  std_logic_vector(3 downto 0);   -- pulsadores
-    led : out std_logic_vector(7 downto 0)    -- LEDs
-  );
+    led : out std_logic_vector(7 downto 0)    -- LEDs);
 end p1_leds;
 
 architecture flujo of p1_leds is
@@ -94,10 +93,9 @@ use ieee.numeric_std.all;
 entity p2_sum4 is
   port (
     a, b : in  std_logic_vector(3 downto 0);
-    cin  : in  std_logic;
-    s    : out std_logic_vector(3 downto 0);
-    cout : out std_logic
-  );
+    cin: in  std_logic;
+    s: out std_logic_vector(3 downto 0);
+    cout : out std_logic);
 end p2_sum4;
 
 architecture rtl of p2_sum4 is
@@ -115,9 +113,8 @@ use ieee.numeric_std.all;
 
 entity p2_cmp4 is
   port (
-    a, b       : in  std_logic_vector(3 downto 0);
-    gt, eq, lt : out std_logic
-  );
+    a, b: in  std_logic_vector(3 downto 0);
+    gt, eq, lt : out std_logic);
 end p2_cmp4;
 
 architecture rtl of p2_cmp4 is
@@ -132,10 +129,9 @@ use ieee.std_logic_1164.all;
 
 entity p2_mux4 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
+    d: in  std_logic_vector(3 downto 0);
     sel : in  std_logic_vector(1 downto 0);
-    y   : out std_logic
-  );
+    y: out std_logic);
 end p2_mux4;
 
 architecture rtl of p2_mux4 is
@@ -154,9 +150,8 @@ use ieee.std_logic_1164.all;
 
 entity p2_seg7 is
   port (
-    d   : in  std_logic_vector(3 downto 0);
-    seg : out std_logic_vector(6 downto 0)
-  );
+    d: in  std_logic_vector(3 downto 0);
+    seg : out std_logic_vector(6 downto 0));
 end p2_seg7;
 
 architecture rtl of p2_seg7 is
@@ -212,9 +207,8 @@ entity p3_contador is
   generic ( N : positive := 10 );
   port (
     clk, rst, en : in  std_logic;
-    q            : out std_logic_vector(3 downto 0);
-    fin          : out std_logic                       -- vale 1 en el último estado
-  );
+    q: out std_logic_vector(3 downto 0);
+    fin: out std_logic                       -- vale 1 en el último estado);
 end p3_contador;
 
 architecture rtl of p3_contador is
@@ -247,13 +241,12 @@ entity p3_divisor is
   generic ( DIV : positive := 50_000_000 );     -- relación f_in / f_out (número par)
   port (
     clk, rst : in  std_logic;
-    clk_out  : out std_logic
-  );
+    clk_out: out std_logic);
 end p3_divisor;
 
 architecture rtl of p3_divisor is
   signal cnt : integer range 0 to DIV/2 - 1 := 0;
-  signal s   : std_logic := '0';
+  signal s: std_logic := '0';
 begin
   process (clk, rst)
   begin
@@ -280,15 +273,14 @@ entity p3_antirrebote is
   generic ( LIM : positive := 1_000_000 );
   port (
     clk, btn : in  std_logic;
-    limpio   : out std_logic
-  );
+    limpio: out std_logic);
 end p3_antirrebote;
 
 architecture rtl of p3_antirrebote is
   signal s1, s2 : std_logic := '0';           -- sincronizador de dos biestables
-  signal prev   : std_logic := '0';
-  signal cnt    : integer range 0 to LIM := 0;
-  signal sal    : std_logic := '0';
+  signal prev: std_logic := '0';
+  signal cnt: integer range 0 to LIM := 0;
+  signal sal: std_logic := '0';
 begin
   process (clk)
   begin
@@ -314,8 +306,7 @@ use ieee.std_logic_1164.all;
 entity p3_detector101 is
   port (
     clk, rst, x : in  std_logic;
-    z           : out std_logic
-  );
+    z: out std_logic);
 end p3_detector101;
 
 architecture rtl of p3_detector101 is
@@ -352,7 +343,7 @@ contador mod 12: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1]
 divisor 50 MHz -&gt; 1 Hz: DIV=50000000, cuenta hasta 24999999, 25 bits
 divisor 50 MHz -&gt; 1 kHz: DIV=50000, cuenta hasta 24999, 15 bits
 entrada : 00101011111111010000000000
-salida  : 00000000000011111111110000
+salida: 00000000000011111111110000
 detector 101: x = [1, 0, 1, 0, 1, 1, 0, 1]  z = [0, 0, 1, 0, 1, 0, 0, 1]
 Comprobaciones: OK</code></pre></div>
 <h2 id="h81">Qué escribir en la memoria</h2>
@@ -370,11 +361,10 @@ use ieee.numeric_std.all;
 
 entity p4_display4 is
   port (
-    clk    : in  std_logic;                        -- 50 MHz
+    clk: in  std_logic;                        -- 50 MHz
     d3, d2, d1, d0 : in std_logic_vector(3 downto 0);
-    seg    : out std_logic_vector(6 downto 0);     -- activos a nivel bajo
-    an     : out std_logic_vector(3 downto 0)      -- ánodos, activos a nivel bajo
-  );
+    seg: out std_logic_vector(6 downto 0);     -- activos a nivel bajo
+    an: out std_logic_vector(3 downto 0)      -- ánodos, activos a nivel bajo);
 end p4_display4;
 
 architecture rtl of p4_display4 is
@@ -423,16 +413,14 @@ use ieee.numeric_std.all;
 
 entity p6_alarma is
   generic (
-    T_ALTA  : natural := 375;    -- 37,5 °C: se activa la alarma de alta
-    T_BAJA  : natural := 360;    -- 36,0 °C: se activa la alarma de baja
-    HIST    : natural := 5       -- 0,5 °C de histéresis
-  );
+    T_ALTA: natural := 375;    -- 37,5 °C: se activa la alarma de alta
+    T_BAJA: natural := 360;    -- 36,0 °C: se activa la alarma de baja
+    HIST: natural := 5       -- 0,5 °C de histéresis);
   port (
     clk, rst : in  std_logic;
-    temp     : in  std_logic_vector(9 downto 0);
-    al_alta  : out std_logic;
-    al_baja  : out std_logic
-  );
+    temp: in  std_logic_vector(9 downto 0);
+    al_alta: out std_logic;
+    al_baja: out std_logic);
 end p6_alarma;
 
 architecture rtl of p6_alarma is
@@ -475,5 +463,5 @@ Comprobaciones: OK</code></pre></div>
 <h2 id="h87">Qué debe contener la documentación y la defensa</h2>
 <ul><li>Una <strong>tabla de interfaz</strong> (señales, ancho, sentido, significado).</li><li>Un <strong>diagrama de bloques</strong> del módulo y de cómo encaja en el sistema.</li><li>La <strong>estrategia de pruebas</strong> (casos normales y límite) y los resultados.</li><li>La <strong>justificación</strong> de cada decisión de diseño (por qué histéresis, por qué ese ancho de bits).</li><li>Si usaste IA: qué pediste, qué cambiaste y cómo comprobaste que es correcto.</li></ul>
 <aside class="box falla"><div class="boxh"><span class="ic">🚧</span> Qué suele fallar</div><ul><li>Integrar sin haber probado cada módulo por separado.</li><li>Interfaces mal acordadas (anchos, polaridad activo-alto/bajo, qué unidad lleva cada dato).</li><li>No documentar las suposiciones.</li><li>Defender código que no entiendes.</li></ul></aside></section><nav class="pager cardgrid"><a class="tile" href="tema-12-13.html"><span>← Anterior</span><b>T12–T13 · Lógica programable y VHDL</b></a><a class="tile" href="examenes.html"><span>Siguiente →</span><b>Exámenes resueltos paso a paso</b></a></nav>
-<div class="foot">Guía no oficial de Electrónica Digital (UPCT) · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
+<div class="foot">Guía no oficial de Electrónica Digital · Última actualización: 9 de noviembre de 2026. Los resultados numéricos y las ecuaciones se han comprobado con código.</div></div></main></div>
 <script src="assets/sims.js"></script><script src="assets/app.js"></script></body></html>

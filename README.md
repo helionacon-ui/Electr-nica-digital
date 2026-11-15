@@ -1,6 +1,6 @@
 # Electrónica Digital · Guía para aprobar
 
-Guía de estudio interactiva de Electrónica Digital (UPCT, Grado en Ingeniería Biomédica, 3.º).
+Guía de estudio interactiva de Electrónica Digital (Grado en Ingeniería Biomédica, 3.º).
 
 Última actualización: 9 de noviembre de 2026.
 
