@@ -1,4 +1,4 @@
-# Electrónica Digital · Guía para aprobar
+# Electrónica Digital · Apuntes
 
 Guía de estudio interactiva de Electrónica Digital (Grado en Ingeniería Biomédica, 3.º).
 
