@@ -44,14 +44,15 @@ M.reg('ed-fsm',M.base({title:'Autómata de Moore: detector de la secuencia 101',
   U.readout(D,['estado '+cur+'    Z = '+(cur==='S3'?'1  ← 101 detectado':'0')],480);}));
 
 /* T12-13 VHDL: un registro con reset síncrono */
-M.reg('ed-vhdl',M.pasos({title:'VHDL: describir un registro de 8 bits',H:580,dur:22,y0:105,gap:44,lines:[
- {s:'process (clk)',it:false,size:18,a:'left',x:70},
- {s:'begin',it:false,size:18,a:'left',x:70},
- {s:'   if rising_edge(clk) then        -- solo en el flanco de subida',it:false,size:17,a:'left',x:70},
- {s:'      if rst = \'1\' then q <= (others => \'0\');   -- reset síncrono',it:false,size:17,a:'left',x:70},
- {s:'      elsif en = \'1\' then q <= d;        -- carga con habilitación',it:false,size:17,a:'left',x:70},
- {s:'      end if;',it:false,size:17,a:'left',x:70},
- {s:'   end if;',it:false,size:17,a:'left',x:70},
- {s:'end process;',it:false,size:18,a:'left',x:70},
- {s:'→ el sintetizador infiere 8 biestables D con multiplexor de carga',it:false,size:17,c:'m',a:'left',x:70}]}));
+var VH=['process (clk) begin','  if rising_edge(clk) then','    if rst = \'1\' then q <= x"00";','    elsif en = \'1\' then q <= d;','    end if;','  end if;','end process;'];
+var VD=[[0,0,0x00],[1,0,0x3A],[0,1,0x3A],[0,1,0x7F],[0,0,0x7F],[0,1,0x15],[1,1,0x15],[0,1,0x42]];
+M.reg('ed-vhdl',M.base({title:'VHDL: un registro y su simulación',H:600,dur:20,caps:[[6,'El proceso solo hace algo en el flanco de subida del reloj: describe un registro de 8 bits con reset síncrono y habilitación.'],[13,'En cada flanco: si rst = 1, q se pone a 00; si no y en = 1, q copia d; si en = 0, q conserva su valor.'],[99,'La simulación lo confirma: q solo cambia en los flancos. El sintetizador infiere 8 biestables D con un multiplexor de carga.']]},
+ function(D,t){var n=Math.min(8,Math.floor(seg(t,0.5,19)*8.999)),x0=150,cw=55,q=0,Q=[];for(var i=0;i<8;i++){var v=VD[i];if(v[0])q=0;else if(v[1])q=v[2];Q.push(q);}
+  var cur=n>0?VD[n-1]:null,line=cur?(cur[0]?2:(cur[1]?3:4)):1;VH.forEach(function(l,i){var y=90+i*24,on=i===line||(i===1&&n>0);D.text(l,40,y,{s:14,c:on&&i===line?C.y:C.w,mono:true,bold:on&&i===line});});
+  var rows=[['clk',C.f],['rst',C.bad],['en',C.ok],['d',C.hl],['q',C.m]],y0=300;rows.forEach(function(r,k){var y=y0+k*44;D.text(r[0],x0-14,y+4,{s:15,a:'right',c:r[1],mono:true});
+   for(var i=0;i<8;i++){var x=x0+i*cw;if(i>=n&&k>0)break;if(k===0){D.path([[x,y+10],[x,y-10],[x+cw/2,y-10],[x+cw/2,y+10],[x+cw,y+10]],r[1],2);continue;}
+    if(k<3){var b=VD[i][k-1];D.line(x,y+(b?-10:10),x+cw,y+(b?-10:10),r[1],2.2);if(i&&VD[i-1][k-1]!==b)D.line(x,y-10,x,y+10,r[1],2.2);}
+    else{var val=k===3?VD[i][2]:(i?Q[i-1]:0);if(k===4&&i<n)val=Q[i];var hx=('0'+val.toString(16).toUpperCase()).slice(-2);D.path([[x+4,y-10],[x+cw-4,y-10],[x+cw,y],[x+cw-4,y+10],[x+4,y+10],[x,y],[x+4,y-10]],r[1],1.6);D.text(hx,x+cw/2,y+5,{s:13,a:'center',c:r[1],mono:true});}}});
+  if(n>0)D.rect(x0+(n-1)*cw,y0-20,4,5*44,null,RG(C.y,.6));}));
+
 })();
