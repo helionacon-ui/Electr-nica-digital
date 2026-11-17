@@ -55,4 +55,9 @@ M.reg('ed-vhdl',M.base({title:'VHDL: un registro y su simulación',H:600,dur:20,
     else{var val=k===3?VD[i][2]:(i?Q[i-1]:0);if(k===4&&i<n)val=Q[i];var hx=('0'+val.toString(16).toUpperCase()).slice(-2);D.path([[x+4,y-10],[x+cw-4,y-10],[x+cw,y],[x+cw-4,y+10],[x+4,y+10],[x,y],[x+4,y-10]],r[1],1.6);D.text(hx,x+cw/2,y+5,{s:13,a:'center',c:r[1],mono:true});}}});
   if(n>0)D.rect(x0+(n-1)*cw,y0-20,4,5*44,null,RG(C.y,.6));}));
 
+M.reg('ed-c2',M.base({title:'Complemento a dos: la rueda de 4 bits',H:600,dur:18,caps:[[6,'Con 4 bits hay 16 combinaciones. En complemento a dos, las que empiezan por 1 representan negativos: van de −8 (1000) a +7 (0111).'],[12,'Sumar es avanzar por la rueda. Pasar de 0111 (+7) a 1000 (−8) es un desbordamiento: el resultado no cabe en 4 bits.'],[99,'Para cambiar de signo: invertir los bits y sumar 1. Por ejemplo, +3 = 0011 → 1100 + 1 = 1101 = −3.']]},
+ function(D,t){var cx=W/2,cy=300,R=170,k=Math.floor(t*1.2)%16;for(var i=0;i<16;i++){var a=-Math.PI/2+i*2*Math.PI/16,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a),v=i<8?i:i-16,on=i===k;
+   D.dot(x,y,on?26:20,on?RG(C.m,.3):RG(v<0?C.bad:C.f,.12));D.text(('000'+i.toString(2)).slice(-4),x,y-1,{s:on?15:13,a:'center',c:on?C.m:C.w,mono:true,bold:on});D.text((v>0?'+':'')+v,x,y+15,{s:12,a:'center',c:v<0?C.bad:C.f});}
+  D.ctx.save();D.ctx.setLineDash([5,4]);var a7=-Math.PI/2+7.5*2*Math.PI/16;D.line(cx+0.7*R*Math.cos(a7),cy+0.7*R*Math.sin(a7),cx+1.25*R*Math.cos(a7),cy+1.25*R*Math.sin(a7),C.hl,2);D.ctx.restore();D.text('desbordamiento',cx+1.05*R*Math.cos(a7)-20,cy+1.05*R*Math.sin(a7)+30,{s:14,c:C.hl,a:'right'});
+  var v=k<8?k:k-16;D.text(('000'+k.toString(2)).slice(-4)+' = '+(v>0?'+':'')+v,cx,cy+8,{s:24,a:'center',c:C.m,mono:true,bold:true});}));
 })();
